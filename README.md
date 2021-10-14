@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development language
+  - Ruby 2.6.5
+  - Rails 5.2.6
 
-Things you may want to cover:
+## Employment Term Technologie
+  - Fonction Favorite
+  - Fonction de commentaire utilisant Ajax
 
-* Ruby version
+## Technologies outside the curriculum
 
-* System dependencies
+- VueJs
+- Frebase Storage
 
-* Configuration
+## Executon procedure
+    $ git clone https://github.com/EleonorSemevo/final_project.git
+    $ cd final_project
+    $ bundle install
+    $ rails db:create
+    $ rails db:migrate
+    $ rails db:seed
+    $ rails s
 
-* Database creation
+## Catalog design
 
-* Database initialization
+https://docs.google.com/document/d/1cGv3kD-4UdJYJ6EfU3QmLuTteaU0JJOyzGjgogbAzvU/edit?usp=sharing
 
-* How to run the test suite
+## Table definiton document
 
-* Services (job queues, cache servers, search engines, etc.)
+https://docs.google.com/spreadsheets/d/1lZl0KVo1qMC14dB6abrex6fDRBZLBEUcrMFP1DhKU7c/edit?usp=sharing
 
-* Deployment instructions
+## ER diagram
 
-* ...
+
+
+![ER diagram!](/app/assets/images/er_diagram.png "ER diagram")
+
+https://cacoo.com/diagrams/JDJg5doMkEbPif4G/3FF96
+
+## Screen transition diagram
+
+
+
+![Transition diagram!](/app/assets/images/transition.png "Transition diagram")
+
+https://cacoo.com/diagrams/JDJg5doMkEbPif4G/29644
+
+
+## Wireframe
+
+https://cacoo.com/diagrams/JDJg5doMkEbPif4G/E1911
