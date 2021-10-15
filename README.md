@@ -50,3 +50,6 @@ https://cacoo.com/diagrams/JDJg5doMkEbPif4G/29644
 ## Wireframe
 
 https://cacoo.com/diagrams/JDJg5doMkEbPif4G/E1911
+
+## Check sheet
+https://docs.google.com/spreadsheets/d/17TjLyewfYm36-lyLEEsKCzBPAjjMcqZstp4RQ4UQQio/edit?usp=sharing
