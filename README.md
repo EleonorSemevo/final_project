@@ -12,6 +12,7 @@
 
 - VueJs
 - Frebase Storage
+- Active Admin
 
 ## Executon procedure
     $ git clone https://github.com/EleonorSemevo/final_project.git
