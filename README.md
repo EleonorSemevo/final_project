@@ -29,7 +29,7 @@ https://docs.google.com/document/d/1cGv3kD-4UdJYJ6EfU3QmLuTteaU0JJOyzGjgogbAzvU/
 
 ## Table definiton document
 
-https://docs.google.com/spreadsheets/d/1lZl0KVo1qMC14dB6abrex6fDRBZLBEUcrMFP1DhKU7c/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/17TjLyewfYm36-lyLEEsKCzBPAjjMcqZstp4RQ4UQQio/edit#gid=1090603487
 
 ## ER diagram
 
