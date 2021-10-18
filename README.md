@@ -11,7 +11,6 @@
 ## Technologies outside the curriculum
 
 - VueJs
-- Frebase Storage
 - Active Admin
 
 ## Executon procedure
