@@ -1,0 +1,87 @@
+// Place all the styles related to the hospitals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+}
+.menu-item-rigth{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+nav ul{
+  height: 60px;
+}
+.menu-item{
+  margin-left: 10px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.nav-item{
+color: white !important;
+}
+
+header ul{
+  background-color: #999999;
+}
+
+header ul div li a:hover{
+  text-decoration: none;
+  background-color: #999999,
+}
+
+.logo{
+  color: #512da8 !important;
+  font-size: 25px;
+}
+
+.logo:hover{
+  background-color: #999999 !important;
+}
+
+/*
+For hospitals uniquely
+*/
+
+.after_nav{
+  background-color: #241f39;
+  height: 400px;
+  padding: 3rem;
+}
+.look_hospital{
+font-size: 5rem;
+padding: 2rem;
+
+color: white;
+text-align: center;
+}
+
+.place{
+  color: grey;
+  text-align: center;
+  padding: 1rem;
+}
+.search-block{
+  color: wihte;
+}
+
+.wite-color{
+  color: white;
+}
+.list-table{
+  margin-top: 50px !important ;
+}
+
+.table-container{
+  background-color: white;
+}

@@ -1,0 +1,50 @@
+
+<div class="after_nav">
+  <p class="look_hospital">Are you looking for a hospital?</p>
+  <p class="place">You are at the rigth place</p>
+
+  <div class="search-block">
+    <%= form_with(scope: :hospital, url: hospitals_path, method: :get, local: true ) do |form|%>
+
+	  <%= form.label :name, class: 'col-md-1 wite-color' %>
+	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
+    <%= form.label :town, class: 'col-md-1 wite-color' %>
+	  <%= form.text_field :town, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
+    <%= form.label :area, class: 'col-md-1 wite-color' %>
+	  <%= form.text_field :area, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
+    <%= form.label :hospital_speciality, class: 'col-md-1 wite-color' %>
+    <%= form.text_field :specality, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
+    <%= form.submit 'Search', class: 'btn btn-default'%>
+
+ <% end %>
+  </div>
+  <div class="table-container">
+    <table class="list-table table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Area</th>
+          <th>Public</th>
+          <th>Googlemap link</th>
+          <th>Number1</th>
+          <th>Number2</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @hospitals.each do |hospital| %>
+          <tr>
+            <td><%= hospital.name %></td>
+            <td><%= hospital.area.name %></td>
+            <td><%= hospital.public %></td>
+            <td><%= hospital.googlemap_link %></td>
+            <td><%= hospital.number1 %></td>
+            <td><%= hospital.number2 %></td>
+            <td><%= link_to 'Details', hospital %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
