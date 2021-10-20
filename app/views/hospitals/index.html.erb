@@ -8,12 +8,9 @@
 
 	  <%= form.label :name, class: 'col-md-1 wite-color' %>
 	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
-    <%= form.label :town, class: 'col-md-1 wite-color' %>
-	  <%= form.text_field :town_id, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
-    <%= form.label :area, class: 'col-md-1 wite-color' %>
-	  <%= form.text_field :area_id, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
-    <%= form.label :hospital_speciality, class: 'col-md-1 wite-color' %>
-    <%= form.text_field :specality_id, class: 'col-md-1',style: "padding: 7px;", placeholder: 'search...' %>
+	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: 'select town') %>
+    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
+    <%= form.collection_select(:speciality_id, Speciality.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select speciality') %>
     <%= form.submit 'Search', class: 'btn btn-default'%>
 
  <% end %>
