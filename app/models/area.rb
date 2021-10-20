@@ -1,4 +1,6 @@
 class Area < ApplicationRecord
   validates :name, presence:true
-  belongs_to :town
+  validates :town, presence:true
+
+  has_many :hospitals
 end

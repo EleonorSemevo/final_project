@@ -4,6 +4,33 @@ class HospitalsController < ApplicationController
   # GET /hospitals or /hospitals.json
   def index
     @hospitals = Hospital.all
+    # if params[:search].present?
+    #   name = params[:hospital][:name]
+    #   area_id = params[:hospital][:area_id].to_i
+    #   town_id = params[:hospital][:town_id].to_i
+    #   if town_id!=''
+    #     town = Area.find(town_id)
+    #   end
+    #   specality_id = params[:hospital][:specality_id].to_i
+    #   if name !='' && area_id !='' && town_id != '' && speciality_id != ''
+    #   result =  Hospital.where('name like ? and area_id like ?')
+    #   # recherche de town
+    #   hosp_town = []
+    #   result.each do |hospital|
+    #     if hospital.area.town == town_id
+    #       hosp_town.push(hospital)
+    #     end
+    #   end
+    #   # fin recherche de town
+    #   specialities  = Hospital
+    #   @hospitals.each do |hospital|
+    #     if hospital.specialities
+    #     end
+    #   end
+    #
+    #   end
+
+    # end
   end
 
   # GET /hospitals/1 or /hospitals/1.json
@@ -64,6 +91,6 @@ class HospitalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hospital_params
-      params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2)
+      params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:search,:town_id,:speciality_id)
     end
 end

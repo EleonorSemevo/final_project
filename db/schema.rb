@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_094555) do
+ActiveRecord::Schema.define(version: 2021_10_20_041640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
-    t.bigint "town_id"
+    t.string "town"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["town_id"], name: "index_areas_on_town_id"
+  end
+
+  create_table "hospital_specialities", force: :cascade do |t|
+    t.bigint "hospital_id"
+    t.bigint "speciality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_hospital_specialities_on_hospital_id"
+    t.index ["speciality_id"], name: "index_hospital_specialities_on_speciality_id"
   end
 
   create_table "hospitals", force: :cascade do |t|
@@ -41,12 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_094555) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "towns", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "areas", "towns"
+  add_foreign_key "hospital_specialities", "hospitals"
+  add_foreign_key "hospital_specialities", "specialities"
   add_foreign_key "hospitals", "areas"
 end
