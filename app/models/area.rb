@@ -4,4 +4,5 @@ class Area < ApplicationRecord
 
   has_many :hospitals
   has_many :pharmacies
+  has_many :blood_banks
 end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @blood_bank.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @blood_bank.area.name %>
+</p>
+
+<p>
+  <strong>Googlemap link:</strong>
+  <%= @blood_bank.googlemap_link %>
+</p>
+
+<p>
+  <strong>Number1:</strong>
+  <%= @blood_bank.number1 %>
+</p>
+
+<p>
+  <strong>Number2:</strong>
+  <%= @blood_bank.number2 %>
+</p>
+
+<%= link_to 'Edit', edit_blood_bank_path(@blood_bank) %> |
+<%= link_to 'Back', blood_banks_path %>
