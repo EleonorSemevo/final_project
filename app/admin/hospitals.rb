@@ -11,6 +11,13 @@ ActiveAdmin.register Hospital do
      f.inputs 'New Hospital' do
      f.inputs
      f.input :specialities, :as => :check_boxes, :collection => Speciality.order("name ASC").all
+
+     # Speciality.each do |speciality|
+     #   f.input :speciality, :as => :check_boxes, :collection => Speciality.order("name ASC").all
+     # end
+    #  Speciality.all. each do |speciality|
+    #  check_box_tag ""
+    # end
     end
 
 

@@ -5,7 +5,7 @@ ActiveAdmin.register Speciality do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  config.create_another = true
+  # config.create_another = true
    permit_params :name
   #
   # or

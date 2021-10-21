@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_115540) do
+ActiveRecord::Schema.define(version: 2021_10_21_125537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,9 +86,20 @@ ActiveRecord::Schema.define(version: 2021_10_21_115540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "timetables", force: :cascade do |t|
+    t.bigint "hospital_speciality_id"
+    t.string "day"
+    t.integer "start_hour"
+    t.integer "end_hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_speciality_id"], name: "index_timetables_on_hospital_speciality_id"
+  end
+
   add_foreign_key "blood_banks", "areas"
   add_foreign_key "hospital_specialities", "hospitals"
   add_foreign_key "hospital_specialities", "specialities"
   add_foreign_key "hospitals", "areas"
   add_foreign_key "pharmacies", "areas"
+  add_foreign_key "timetables", "hospital_specialities"
 end
