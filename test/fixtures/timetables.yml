@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hospital_speciality: one
+  day: MyString
+  start_hour: 1
+  end_hour: 1
+
+two:
+  hospital_speciality: two
+  day: MyString
+  start_hour: 1
+  end_hour: 1

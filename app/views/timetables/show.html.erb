@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hospital speciality:</strong>
+  <%= @timetable.hospital_speciality %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @timetable.day %>
+</p>
+
+<p>
+  <strong>Start hour:</strong>
+  <%= @timetable.start_hour %>
+</p>
+
+<p>
+  <strong>End hour:</strong>
+  <%= @timetable.end_hour %>
+</p>
+
+<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Back', timetables_path %>
