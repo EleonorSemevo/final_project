@@ -3,4 +3,5 @@ class Area < ApplicationRecord
   validates :town, presence:true
 
   has_many :hospitals
+  has_many :pharmacies
 end

@@ -1,0 +1,47 @@
+<%= form_with(model: pharmacy, local: true) do |form| %>
+  <% if pharmacy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pharmacy.errors.count, "error") %> prohibited this pharmacy from being saved:</h2>
+
+      <ul>
+      <% pharmacy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area_id %>
+      <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :all_nigth %>
+    <%= form.check_box :all_nigth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :googlemap_link %>
+    <%= form.text_field :googlemap_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number1 %>
+    <%= form.text_field :number1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number2 %>
+    <%= form.text_field :number2 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

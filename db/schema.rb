@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_085807) do
+ActiveRecord::Schema.define(version: 2021_10_21_101958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2021_10_20_085807) do
     t.index ["area_id"], name: "index_hospitals_on_area_id"
   end
 
+  create_table "pharmacies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "area_id"
+    t.boolean "all_nigth"
+    t.string "googlemap_link"
+    t.string "number1"
+    t.string "number2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_pharmacies_on_area_id"
+  end
+
   create_table "specialities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -66,4 +78,5 @@ ActiveRecord::Schema.define(version: 2021_10_20_085807) do
   add_foreign_key "hospital_specialities", "hospitals"
   add_foreign_key "hospital_specialities", "specialities"
   add_foreign_key "hospitals", "areas"
+  add_foreign_key "pharmacies", "areas"
 end

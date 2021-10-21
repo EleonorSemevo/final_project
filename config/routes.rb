@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pharmacies
   ActiveAdmin.routes(self)
   resources :hospitals
   resources :specialities

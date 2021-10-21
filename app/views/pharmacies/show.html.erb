@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pharmacy.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @pharmacy.area.name %>
+</p>
+
+<p>
+  <strong>All nigth:</strong>
+  <%= @pharmacy.all_nigth %>
+</p>
+
+<p>
+  <strong>Googlemap link:</strong>
+  <%= @pharmacy.googlemap_link %>
+</p>
+
+<p>
+  <strong>Number1:</strong>
+  <%= @pharmacy.number1 %>
+</p>
+
+<p>
+  <strong>Number2:</strong>
+  <%= @pharmacy.number2 %>
+</p>
+
+<%= link_to 'Edit', edit_pharmacy_path(@pharmacy) %> |
+<%= link_to 'Back', pharmacies_path %>

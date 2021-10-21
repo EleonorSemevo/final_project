@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  area: one
+  all_nigth: false
+  googlemap_link: MyString
+  number1: MyString
+  number2: MyString
+
+two:
+  name: MyString
+  area: two
+  all_nigth: false
+  googlemap_link: MyString
+  number1: MyString
+  number2: MyString
