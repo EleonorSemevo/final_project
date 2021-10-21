@@ -4,7 +4,7 @@
   <p class="place">You are at the rigth place</p>
 
   <div class="search-block">
-    <%= form_with(scope: :hospital, url: hospitals_path, method: :get, local: true ) do |form|%>
+    <%= form_with(scope: :pharmacy, url: pharmacies_path, method: :get, local: true ) do |form|%>
 	  <%= form.label :name, class: 'col-md-1 wite-color' %>
 	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: 'search...' %>
 	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: 'select town') %>
