@@ -5,8 +5,7 @@ ActiveAdmin.register Timetable do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  belongs_to :hospital
-  permit_params :hospital_speciality_id, :day, :start_hour, :end_hour
+   permit_params :hospital_speciality_id, :day, :start_hour, :end_hour
   #
   # or
   #

@@ -5,7 +5,7 @@ ActiveAdmin.register HospitalSpeciality do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :hospital_id, :speciality_id
+  permit_params :hospital_id, :speciality_id
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register HospitalSpeciality do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

@@ -37,22 +37,46 @@ ActiveAdmin.register Hospital do
   f.actions
    end
 
-   # before_update
-   #   specialities = params[:hospital][:hospital_specialities_attributes]
-   #   specialities.each do
-   #
-   #   end
-   # end
-
    controller do
-     def before_update
-       specialities = params[:hospital][:hospital_specialities_attributes]
+     def update
        Hospital.find(params[:id]).hospital_specialities.each do |m|
-         Timetable.find_by(hospital_speciality_id: m.id).destroy
+         if Timetable.find_by(hospital_speciality_id: m.id).present?
+           Timetable.find_by(hospital_speciality_id: m.id).destroy
+         end
        end
+
         Hospital.find(params[:id]).hospital_specialities.destroy_all
+
+        update!
     end
-   end
+
+    def create
+      # c
+      @hospital = Hospital.create(params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id))
+      hospital_params = params[:hospital][:hospital_specialities_attributes]
+      if   params[:hospital][:hospital_specialities_attributes].present?
+        params[:hospital][:hospital_specialities_attributes].each do |p|
+          @h_p = HospitalSpeciality.create(hospital_id: @hospital.id, speciality_id: p.last[:speciality_id].to_i)
+        if p.last[:timetables_attributes].present?
+          p.last[:timetables_attributes].each do |m|
+
+          timetable=  Timetable.create(day: m.last[:day] , start_hour: m.last[:start_hour].to_i,
+            end_hour: m.last[:end_hour].to_i, hospital_speciality_id: @h_p.id)
+            # m.id
+          end
+        end
+
+      end
+      end
+      create!
+
+    end
+
+
+
+    def hospital_params
+      params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id)
+    end
 
   #
   # or
@@ -70,4 +94,13 @@ ActiveAdmin.register Hospital do
 #     permitted
 #   # end
 #
+# def hospital_params
+#   params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id,)
+# end
+    end
+
+    # def before_update
+    #
+    # end
+  
 end

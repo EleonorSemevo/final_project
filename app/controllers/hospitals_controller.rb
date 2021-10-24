@@ -268,6 +268,6 @@ class HospitalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hospital_params
-      params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id,)
+      params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id)
     end
 end
