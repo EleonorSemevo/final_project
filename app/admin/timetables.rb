@@ -5,7 +5,8 @@ ActiveAdmin.register Timetable do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :hospital_speciality_id, :day, :start_hour, :end_hour
+  belongs_to :hospital
+  permit_params :hospital_speciality_id, :day, :start_hour, :end_hour
   #
   # or
   #
@@ -14,5 +15,5 @@ ActiveAdmin.register Timetable do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
