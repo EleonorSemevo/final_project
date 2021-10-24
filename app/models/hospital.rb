@@ -6,4 +6,10 @@ class Hospital < ApplicationRecord
 
   scope :search_name, ->(name){where('name like ?', name)}
   scope :search_area, ->(area_id){where('area_id = ?', area_id)}
+
+  has_many :timetables, through: :hospital_specialities, source: :hospital_speciality
+
+
+  accepts_nested_attributes_for :timetables,  allow_destroy: true
+  accepts_nested_attributes_for :specialities,  allow_destroy: true
 end

@@ -1,0 +1,21 @@
+<%= semantic_form_for [:admin, @hospital] do |f| %>
+  <%= f.inputs :name %>
+  <%= f.label :public , class: ""%>
+  <%= f.check_box :public, label: "public" %>
+  <%= f.inputs :googlemap_link,:as => :url %>
+  <%= f.inputs :number1,:as => :phone %>
+  <%= f.inputs :number2, :label => "Choose Title" %>
+
+
+
+
+
+
+
+
+
+
+
+
+  <%= f.actions %>
+<% end %>
