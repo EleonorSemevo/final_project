@@ -6,4 +6,6 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, length: { minimum: 6 }
+
+  has_many :comments, dependent: :destroy
 end

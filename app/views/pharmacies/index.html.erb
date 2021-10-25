@@ -44,4 +44,17 @@
       </tbody>
     </table>
   </div>
+
+  <div class="comments">
+    <p>List of comments (the contents below from here are important)</p>
+    <!-- Get the HTML id of this comments_area and update only that part of the div-->
+    <div id="comments_area">
+      <!-- Render to display a list of posted comments on the blog details page -->
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+    <!-- Render to display the comment input field on the detail page of the blog -->
+    <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+    <%= link_to 'Edit', edit_comment_path(@comment) %> |
+    <%= link_to 'Return', pharmacies_path %>
+    </div>
 </div>
