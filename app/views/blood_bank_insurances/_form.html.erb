@@ -1,0 +1,27 @@
+<%= form_with(model: blood_bank_insurance, local: true) do |form| %>
+  <% if blood_bank_insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blood_bank_insurance.errors.count, "error") %> prohibited this blood_bank_insurance from being saved:</h2>
+
+      <ul>
+      <% blood_bank_insurance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :blood_bank_id %>
+    <%= form.text_field :blood_bank_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance_id %>
+    <%= form.text_field :insurance_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

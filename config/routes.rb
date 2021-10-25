@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blood_bank_insurances
   resources :hospital_insurances
   resources :pharmacy_insurances
   resources :insurances

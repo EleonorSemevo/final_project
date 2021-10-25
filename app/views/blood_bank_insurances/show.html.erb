@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Blood bank:</strong>
+  <%= @blood_bank_insurance.blood_bank %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @blood_bank_insurance.insurance %>
+</p>
+
+<%= link_to 'Edit', edit_blood_bank_insurance_path(@blood_bank_insurance) %> |
+<%= link_to 'Back', blood_bank_insurances_path %>

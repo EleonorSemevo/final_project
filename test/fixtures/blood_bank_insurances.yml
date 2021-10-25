@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blood_bank: one
+  insurance: one
+
+two:
+  blood_bank: two
+  insurance: two

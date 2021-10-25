@@ -9,8 +9,8 @@ class Hospital < ApplicationRecord
   scope :search_area, ->(area_id){where('area_id = ?', area_id)}
 
    # has_many :timetables, through: :timetables, source: :hospital_speciality
-   has_many :hospital_specialities
-   has_many :hospital_insurances
+   has_many :hospital_specialities, dependent: :delete_all
+   has_many :hospital_insurances, dependent: :delete_all
 
   # accepts_nested_attributes_for :timetables,  allow_destroy: true
   # accepts_nested_attributes_for :specialities,  allow_destroy: true

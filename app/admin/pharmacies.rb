@@ -15,7 +15,7 @@ ActiveAdmin.register Pharmacy do
 
     # f.input :insurances, :as => :check_boxes, :collection => Insurance.order("name ASC").all
     f.inputs do
-       f.has_many :pharmacy_insurances, sortable: :id, sortable_start: 1 do |t|
+       f.has_many :pharmacy_insurances, allow_destroy: true, sortable: :id, sortable_start: 1 do |t|
          t.input :insurance_id, as: 'select', collection: Insurance.all
        end
      end

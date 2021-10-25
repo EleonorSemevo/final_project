@@ -31,7 +31,7 @@ ActiveAdmin.register Hospital do
             end
         end
 
-        f.has_many :hospital_insurances, sortable: :id,  sortable_start: 1 do |c|
+        f.has_many :hospital_insurances,  sortable: :id,  sortable_start: 1 do |c|
           c.input :insurance_id, as: 'select', collection: Insurance.all
         end
       end

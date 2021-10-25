@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_101630) do
+ActiveRecord::Schema.define(version: 2021_10_25_110605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_10_25_101630) do
     t.string "town"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "blood_bank_insurances", force: :cascade do |t|
+    t.bigint "blood_bank_id"
+    t.bigint "insurance_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blood_bank_id"], name: "index_blood_bank_insurances_on_blood_bank_id"
+    t.index ["insurance_id"], name: "index_blood_bank_insurances_on_insurance_id"
   end
 
   create_table "blood_banks", force: :cascade do |t|
@@ -120,6 +129,8 @@ ActiveRecord::Schema.define(version: 2021_10_25_101630) do
     t.index ["hospital_speciality_id"], name: "index_timetables_on_hospital_speciality_id"
   end
 
+  add_foreign_key "blood_bank_insurances", "blood_banks"
+  add_foreign_key "blood_bank_insurances", "insurances"
   add_foreign_key "blood_banks", "areas"
   add_foreign_key "hospital_insurances", "hospitals"
   add_foreign_key "hospital_insurances", "insurances"
