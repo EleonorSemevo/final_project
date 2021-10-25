@@ -8,9 +8,8 @@ ActiveAdmin.register Hospital do
   #
 
    permit_params  :name, :area_id, :public, :googlemap_link, :number1, :number2,
-    hospital_specialities_attributes: [:speciality_id, timetables_attributes: [:day,
-      :start_hour, :end_hour, :_destroy]
-    ]
+    hospital_specialities_attributes: [:speciality_id, timetables_attributes: [:day,  :start_hour, :end_hour, :_destroy],],
+     hospital_insurances_attributes: [:hospital_id, :insurance_id]
 
 
  # form :partial => "form"
@@ -31,6 +30,10 @@ ActiveAdmin.register Hospital do
               m.input :end_hour
             end
         end
+
+        f.has_many :hospital_insurances, sortable: :id,  sortable_start: 1 do |c|
+          c.input :insurance_id, as: 'select', collection: Insurance.all
+        end
       end
    end
 
@@ -46,12 +49,12 @@ ActiveAdmin.register Hospital do
        end
 
         Hospital.find(params[:id]).hospital_specialities.destroy_all
-
+        Hospital.find(params[:id]).hospital_insurances.destroy_all
         update!
     end
 
     def create
-      # c
+
       @hospital = Hospital.create(params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id))
       hospital_params = params[:hospital][:hospital_specialities_attributes]
       if   params[:hospital][:hospital_specialities_attributes].present?
@@ -67,6 +70,12 @@ ActiveAdmin.register Hospital do
         end
 
       end
+      end
+
+      if params[:hospital][:hospital_insurances_attributes].present?
+         params[:hospital][:hospital_insurances_attributes].each do |insurance|
+           HospitalInsurance.create(hospital_id: @hospital.id, insurance_id: insurance.last[:insurance_id].to_i)
+         end
       end
       create!
 
@@ -102,5 +111,5 @@ ActiveAdmin.register Hospital do
     # def before_update
     #
     # end
-  
+
 end

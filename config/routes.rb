@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :hospital_insurances
+  resources :pharmacy_insurances
+  resources :insurances
   resources :timetables
   resources :blood_banks
   resources :pharmacies

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pharmacy:</strong>
+  <%= @pharmacy_insurance.pharmacy %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @pharmacy_insurance.insurance %>
+</p>
+
+<%= link_to 'Edit', edit_pharmacy_insurance_path(@pharmacy_insurance) %> |
+<%= link_to 'Back', pharmacy_insurances_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: pharmacy_insurance, local: true) do |form| %>
+  <% if pharmacy_insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pharmacy_insurance.errors.count, "error") %> prohibited this pharmacy_insurance from being saved:</h2>
+
+      <ul>
+      <% pharmacy_insurance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pharmacy_id %>
+    <%= form.text_field :pharmacy_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance_id %>
+    <%= form.text_field :insurance_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

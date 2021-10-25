@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_24_232336) do
+ActiveRecord::Schema.define(version: 2021_10_25_101630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2021_10_24_232336) do
     t.index ["area_id"], name: "index_blood_banks_on_area_id"
   end
 
+  create_table "hospital_insurances", force: :cascade do |t|
+    t.bigint "hospital_id"
+    t.bigint "insurance_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_hospital_insurances_on_hospital_id"
+    t.index ["insurance_id"], name: "index_hospital_insurances_on_insurance_id"
+  end
+
   create_table "hospital_specialities", force: :cascade do |t|
     t.bigint "hospital_id"
     t.bigint "speciality_id"
@@ -68,6 +77,12 @@ ActiveRecord::Schema.define(version: 2021_10_24_232336) do
     t.index ["area_id"], name: "index_hospitals_on_area_id"
   end
 
+  create_table "insurances", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pharmacies", force: :cascade do |t|
     t.string "name"
     t.bigint "area_id"
@@ -78,6 +93,15 @@ ActiveRecord::Schema.define(version: 2021_10_24_232336) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_pharmacies_on_area_id"
+  end
+
+  create_table "pharmacy_insurances", force: :cascade do |t|
+    t.bigint "pharmacy_id"
+    t.bigint "insurance_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["insurance_id"], name: "index_pharmacy_insurances_on_insurance_id"
+    t.index ["pharmacy_id"], name: "index_pharmacy_insurances_on_pharmacy_id"
   end
 
   create_table "specialities", force: :cascade do |t|
@@ -97,9 +121,13 @@ ActiveRecord::Schema.define(version: 2021_10_24_232336) do
   end
 
   add_foreign_key "blood_banks", "areas"
+  add_foreign_key "hospital_insurances", "hospitals"
+  add_foreign_key "hospital_insurances", "insurances"
   add_foreign_key "hospital_specialities", "hospitals"
   add_foreign_key "hospital_specialities", "specialities"
   add_foreign_key "hospitals", "areas"
   add_foreign_key "pharmacies", "areas"
+  add_foreign_key "pharmacy_insurances", "insurances"
+  add_foreign_key "pharmacy_insurances", "pharmacies"
   add_foreign_key "timetables", "hospital_specialities"
 end

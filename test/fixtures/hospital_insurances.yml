@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hospital: one
+  insurance: one
+
+two:
+  hospital: two
+  insurance: two
