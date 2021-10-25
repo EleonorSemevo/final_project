@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "3",
-    "jquerry": "^0.0.1-security"
+    "jquerry": "^0.0.1-security",
+    "jquery": "^3.6.0"
   }
 }

@@ -1,7 +1,9 @@
 class PharmaciesController < InheritedResources::Base
 
 def index
+  @comments = Comment.all
   @pharmacies = Pharmacy.all
+  @comment = Comment.new
   if params[:pharmacy].present?
     name = params[:pharmacy][:name]
     area_id = params[:pharmacy][:area_id]

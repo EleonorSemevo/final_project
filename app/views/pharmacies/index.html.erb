@@ -1,17 +1,16 @@
-
 <div class="after_nav">
   <p class="look_hospital">Are you looking for a pharmacy?</p>
   <p class="place">You are at the rigth place</p>
 
   <div class="search-block">
     <%= form_with(scope: :pharmacy, url: pharmacies_path, method: :get, local: true ) do |form|%>
-	  <%= form.label :name, class: 'col-md-1 wite-color' %>
-	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: 'search...' %>
-	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: 'select town') %>
-    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
-    <%= form.submit 'Search', class: 'btn btn-default'%>
+  	  <%= form.label :name, class: 'col-md-1 wite-color' %>
+  	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: 'search...' %>
+  	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: 'select town') %>
+      <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
+      <%= form.submit 'Search', class: 'btn btn-default'%>
 
- <% end %>
+    <% end %>
   </div>
   <div class="table-container">
     <table class="list-table table table-hover">
@@ -45,16 +44,15 @@
     </table>
   </div>
 
-  <div class="comments">
+  <div class="comments" style="margin-top: 50px;">
+
     <p>List of comments (the contents below from here are important)</p>
-    <!-- Get the HTML id of this comments_area and update only that part of the div-->
     <div id="comments_area">
-      <!-- Render to display a list of posted comments on the blog details page -->
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
     </div>
-    <!-- Render to display the comment input field on the detail page of the blog -->
-    <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
-    <%= link_to 'Edit', edit_comment_path(@comment) %> |
-    <%= link_to 'Return', pharmacies_path %>
-    </div>
+
+    <%= render partial: 'comments/form', locals: { comment: @comment} %>
+
+
+  </div>
 </div>

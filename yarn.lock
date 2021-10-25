@@ -11,3 +11,8 @@ jquerry@^0.0.1-security:
   version "0.0.1-security"
   resolved "https://registry.yarnpkg.com/jquerry/-/jquerry-0.0.1-security.tgz#79cd20163981275f7de6984f6f5ce7b79b107264"
   integrity sha512-6/x0OFGLte1tqTnInZ0foNjR/hCsNnfkNg7T1vxiCKSLObPbSF4EoswifsUdHiXBvQ/F60uILQGlfvjT0x3NSg==
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
