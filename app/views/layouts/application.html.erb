@@ -33,8 +33,10 @@
                   <li class="menu-item"><%= link_to "S'enrégistrer", new_user_path, class:"nav-item" %></li>
                   <li class="menu-item"><%= link_to "Se connecter", new_session_path, class:"nav-item" %></li>
                 <% end %>
-                <% if current_user.admin %>
-                  <li class="menu-item"><%= link_to "Administration", admin_root_path, class:"nav-item" %></li>
+                <% if current_user.present? %>
+                  <% if current_user.admin %>
+                    <li class="menu-item"><%= link_to "Administration", admin_root_path, class:"nav-item" %></li>
+                  <% end %>
                 <% end %>
               </div>
 

@@ -3,6 +3,9 @@ class HospitalsController < ApplicationController
 
   # GET /hospitals or /hospitals.json
   def index
+    @comments = Comment.all
+    @comment = Comment.new
+
     @hospitals = Hospital.all
     if params[:hospital].present?
       name = params[:hospital][:name]

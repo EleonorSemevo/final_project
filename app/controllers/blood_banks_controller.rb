@@ -1,6 +1,8 @@
 class BloodBanksController < InheritedResources::Base
 
   def index
+    @comments = Comment.all
+    @comment = Comment.new
     @blood_banks = BloodBank.all
     if params[:blood_bank].present?
       name = params[:blood_bank][:name]

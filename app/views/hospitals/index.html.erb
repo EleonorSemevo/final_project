@@ -44,4 +44,13 @@
       </tbody>
     </table>
   </div>
+
+  <div class="comments">
+    <p>You can leave a comment</p>
+    <%= render partial: 'comments/form', locals: { comment: @comment} %>
+    <div id="comments_area" class="">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+  </div>
+  
 </div>

@@ -7,7 +7,14 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Findpharma"
   def ensure_admin!
-    raise ActionController::RoutingError.new('Not Found') unless current_user.admin
+      # raise ActionController::RoutingError.new('Not Found') if current_user.admin == nil
+      if current_user.present?
+        if current_user.admin == nil
+          redirect_to new_session_path
+        end
+      else
+        redirect_to new_session_path
+      end
   end
 
 # menu customisation
