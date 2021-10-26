@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   get "/", to: "hospitals#index", as: 'hospitals'
+  put "/comments/favorite/:id", to: "comments#make_favorite", as: 'make_favorites'
   resources :comments
   # get 'sessions/new'
   resources :sessions, only: [:new, :create, :show, :destroy]

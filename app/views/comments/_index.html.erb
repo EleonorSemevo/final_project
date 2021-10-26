@@ -5,12 +5,23 @@
         <div class="comment-content" id="this_comment_<%= comment.id%>"> </div>
         <p><%= comment.content %></p>
 
-        <% if logged_in? && current_user.id == comment.user_id %>
 
-          <p><%= link_to "Edit comment", edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
-          <%= link_to "Delete comment", comment_path(comment), method: :delete, remote: true,
-              data: {confirm: "Do you really want to delete it?"}, class: "btn btn-danger bouton-supprimer"
-            %></p
+        <% if logged_in? && current_user.id == comment.user_id %>
+          <p>
+            <%= link_to "Edit comment", edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
+
+            <%= link_to "Delete comment", comment_path(comment), method: :delete, remote: true,
+              data: {confirm: "Do you really want to delete it?"}, class: "btn btn-danger bouton-supprimer" %>
+          </p
+        <% end %>
+
+        <% if logged_in? && current_user.id != comment.user_id && !favorite?(comment.id) %>
+        <%= link_to 'Like',  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
+
+        <% end %>
+
+        <% unless logged_in?%>
+         <%= link_to "Like", favorite_path(comment,like: "true"), method: :update, style: 'color: green;' %>
         <% end %>
       </li>
     <% end %>

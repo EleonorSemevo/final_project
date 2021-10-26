@@ -1,6 +1,6 @@
 class CommentsController < InheritedResources::Base
   before_action :login_required, only: [:edit, :update, :destroy, :create]
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy, :make_favorite]
    def create
      # @blog = Blog.find(params[:blog_id])
      @comment = current_user.comments.build(comment_params)
@@ -42,6 +42,12 @@ class CommentsController < InheritedResources::Base
            flash.now[:notice] = 'Commentaire supprimé'
            format.js { render :index }
          end
+     end
+
+     def make_favorite
+       Favorite.create(user_id: current_user.id, comment_id: @comment.id)
+       puts "***************"
+       format.js { render :index }
      end
 
    private
