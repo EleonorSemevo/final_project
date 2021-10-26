@@ -44,14 +44,16 @@
     </table>
   </div>
 
-  <div class="comments" style="margin-top: 50px;">
+  <div class="comments" style="margin-top: 200px;">
+    <p>You can leave a comment</p>
+    <%= render partial: 'comments/form', locals: { comment: @comment} %>
 
-    <p>List of comments (the contents below from here are important)</p>
+
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
     </div>
 
-    <%= render partial: 'comments/form', locals: { comment: @comment} %>
+
 
 
   </div>

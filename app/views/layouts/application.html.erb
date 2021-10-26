@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
 
   <body style="margin-top: 0px;
@@ -24,11 +25,13 @@
               <div class="menu-item-rigth">
                 <li class="menu-item"><%= link_to "Pharmacies", pharmacies_path, class:"nav-item"%></li>
                 <li class="menu-item"><%= link_to "Blood banks", blood_banks_path, class:"nav-item"%></li>
-                <li class="menu-item"><a class="nav-item" href="#">account</a></li>
+
                 <% if current_user.present? %>
-                <li class="menu-item"><%= link_to "Logout", session_path(current_user.id), method: :delete, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "account", user_path(current_user), class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Logout", session_path(current_user.id), method: :delete, class:"nav-item" %></li>
                 <% else %>
-                <li class="menu-item"><%= link_to "Register", new_user_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Register", new_user_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Login", new_session_path, class:"nav-item" %></li>
                 <% end %>
               </div>
 

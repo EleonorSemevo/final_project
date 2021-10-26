@@ -1,5 +1,5 @@
 class CommentsController < InheritedResources::Base
-
+  before_action :login_required, only: [:edit, :update, :destroy, :create]
   before_action :set_comment, only: [:edit, :update, :destroy]
    def create
      # @blog = Blog.find(params[:blog_id])
@@ -9,7 +9,7 @@ class CommentsController < InheritedResources::Base
        if @comment.save
          format.js { render :index }
        else
-         format.html { redirect_to pharmacies_path, notice: 'impossible de publier..' }
+         format.html { redirect_to :back, notice: 'impossible de publier..' }
        end
      end
    end
