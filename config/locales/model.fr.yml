@@ -1,0 +1,60 @@
+fr:
+  activerecord:
+    models:
+      area: quartier
+      user: utilisateur
+      favorite: favoris
+      comment: commentaire
+      blood_bank: banque_sang
+      blood_bank_insurance: banque_de_sang_asurance
+      pharmacy: pharmacie
+      pharmacy_insurance: pharmacie_insurance
+      insurance: assurance
+      hospital: hôpital
+      hospital_insurance: hopital_assurance
+      speciality: specialité
+      hospital_speciality: hopital_specialite
+      timetable: emploi_du_temps
+      
+    attributes:
+      user:
+        name: nom
+        email: mail
+        admin: administrateur
+        password: mots_de_passe
+
+      area:
+        name: nom
+        town: ville
+
+      comment:
+        content: contenu
+
+      blood_bank:
+        name: nom
+        area_id: id quartier
+        googlemap_link: lien_google_map
+        number1: numero1
+        number2: numero2
+
+      pharmacy:
+        name: nom
+        area_id: id_quartier
+        googlemap_link: lien_google_map
+        number1: numero1
+        number2: numero2
+
+      insurance:
+        name: nom
+
+      hospital:
+        name: nom
+        area_id: id_quartier
+        googlemap_link: lien_google_map
+        number1: numero1
+        number2: numero2
+
+      timetable:
+        start_hour: heure_debut
+        end_hour: heure_fin
+        day: jour_de_la_semaine
