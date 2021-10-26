@@ -86,3 +86,23 @@ text-align: center;
 .table-container{
   background-color: white;
 }
+.comments{
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+#comments_area{
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: blue;
+}
+
+.bouton-supprimer, .bouton-editer{
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.liste-commentaire{
+  list-style: none;
+}
