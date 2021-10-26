@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
+  get "/", to: "hospitals#index", as: 'hospitals'
   resources :comments
-  get 'sessions/new'
+  # get 'sessions/new'
   resources :sessions, only: [:new, :create, :show, :destroy]
   resources :users
   resources :blood_bank_insurances

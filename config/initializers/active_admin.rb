@@ -1,15 +1,42 @@
 ActiveAdmin.setup do |config|
+  config.before_action :ensure_admin!
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
   config.site_title = "Findpharma"
+  def ensure_admin!
+    raise ActionController::RoutingError.new('Not Found') unless current_user.admin
+  end
+
+# menu customisation
+# config.namespace :admin do |admin|
+#   admin.build_menu do |menu|
+#      menu.add label: "Mon Profil", url: "/admin/users/#{getcurrentuser}", priority: 0
+#     # menu.add label: "Sites" do |sites|
+#     #   sites.add label: "Google",
+#     #             url: "http://google.com",
+#     #             html_options: { target: :blank }
+#     #
+#     #   sites.add label: "Facebook",
+#     #             url: "http://facebook.com"
+#     #
+#     #   sites.add label: "Github",
+#     #             url: "http://github.com"
+#     # end
+#   end
+# end
+#
+# def getcurrentuser
+#   current_user.id
+# end
+
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+   config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -124,7 +151,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+   config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -317,7 +344,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  # config.footer = 'my custom footer text'
+   config.footer = 'Findpharma all rigth reserved'
 
   # == Sorting
   #

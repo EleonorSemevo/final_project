@@ -24,14 +24,17 @@
               </li>
               <div class="menu-item-rigth">
                 <li class="menu-item"><%= link_to "Pharmacies", pharmacies_path, class:"nav-item"%></li>
-                <li class="menu-item"><%= link_to "Blood banks", blood_banks_path, class:"nav-item"%></li>
+                <li class="menu-item"><%= link_to "Banque de sang", blood_banks_path, class:"nav-item"%></li>
 
                 <% if current_user.present? %>
-                  <li class="menu-item"><%= link_to "account", user_path(current_user), class:"nav-item" %></li>
-                  <li class="menu-item"><%= link_to "Logout", session_path(current_user.id), method: :delete, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Compte", user_path(current_user), class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Se déconnecter", session_path(current_user.id), method: :delete, class:"nav-item" %></li>
                 <% else %>
-                  <li class="menu-item"><%= link_to "Register", new_user_path, class:"nav-item" %></li>
-                  <li class="menu-item"><%= link_to "Login", new_session_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "S'enrégistrer", new_user_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to "Se connecter", new_session_path, class:"nav-item" %></li>
+                <% end %>
+                <% if current_user.admin %>
+                  <li class="menu-item"><%= link_to "Administration", admin_root_path, class:"nav-item" %></li>
                 <% end %>
               </div>
 
