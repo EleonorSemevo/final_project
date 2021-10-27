@@ -16,8 +16,9 @@
         <% end %>
 
         <% if logged_in? && current_user.id != comment.user_id && !favorite?(comment.id) %>
-        <%= link_to 'Like',  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
-
+          <%= link_to 'Like',  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
+        <% elsif logged_in? && current_user.id != comment.user_id && favorite?(comment.id) %>
+            <%= link_to 'Dislike',  get_favorite(comment.id), method: :delete, class: 'btn btn-danger', style: "color: white;" %>
         <% end %>
 
         <% unless logged_in?%>

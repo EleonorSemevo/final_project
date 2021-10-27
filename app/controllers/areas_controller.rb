@@ -4,7 +4,6 @@ class AreasController < ApplicationController
   # GET /areas or /areas.json
   def index
     @areas = Area.all
-    @towns = Town.all
   end
 
   # GET /areas/1 or /areas/1.json
