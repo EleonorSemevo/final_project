@@ -18,7 +18,7 @@
        <div class="row ">
          <header >
           <nav>
-            <ul class="nav nav-pills" style="">
+            <ul class="nav nav-pills " style="">
               <li class="">
                 <%= link_to "Findpharma", hospitals_path, class:"menu-item logo"%>
               </li>
@@ -45,9 +45,13 @@
           </nav>
          </header>
 
+        <span class = "principal">
+          <%= yield %>
+        </span>
 
-         <%= yield %>
 
-    </div>
+  <footer>
+    <p>@copyrigth all rigth reserved</p>
+  </footer>
   </body>
 </html>

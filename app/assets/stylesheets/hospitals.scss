@@ -93,7 +93,7 @@ text-align: center;
 }
 .comments{
   margin-top: 200px;
-  margin-bottom: 100px;
+
 }
 
 #comments_area{
@@ -121,5 +121,31 @@ text-align: center;
 }
 .bouton-detail{
   color: white !important;
-  
+
+}
+
+.my-footer{
+  background-color: #241f39 !important;
+  margin-top: 500px;
+}
+
+footer {
+  background-color:  #241f39;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: table;
+}
+
+footer p {
+  display: table-cell;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.principal{
+  margin-bottom: 100px;
 }

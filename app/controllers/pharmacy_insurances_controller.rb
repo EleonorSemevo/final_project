@@ -1,5 +1,4 @@
 class PharmacyInsurancesController < InheritedResources::Base
-
   private
 
     def pharmacy_insurance_params
