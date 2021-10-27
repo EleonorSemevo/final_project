@@ -62,7 +62,6 @@ class TownsController < ApplicationController
       @town = Town.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def town_params
       params.require(:town).permit(:name)
     end
