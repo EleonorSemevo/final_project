@@ -94,3 +94,5 @@ end
 5.times do |m|
   Favorite.create(user_id: m, comment_id: m)
 end
+
+User.create(name: 'admin', email: 'admin@gmail.com', admin: true, password: 'admin123')
