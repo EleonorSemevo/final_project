@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="after_nav_detail_page">
+  <p class="look_hospital">Détail banque de sang </p>
+  <p class="place">You are at the rigth place</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @blood_bank.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @blood_bank.name %>
+  </p>
 
-<p>
-  <strong>Area:</strong>
-  <%= @blood_bank.area.name %>
-</p>
+  <p>
+    <strong>Area:</strong>
+    <%= @blood_bank.area.name %>
+  </p>
 
-<p>
-  <strong>Googlemap link:</strong>
-  <%= @blood_bank.googlemap_link %>
-</p>
-
-<p>
-  <strong>Number1:</strong>
-  <%= @blood_bank.number1 %>
-</p>
-
-<p>
-  <strong>Number2:</strong>
-  <%= @blood_bank.number2 %>
-</p>
-
-<%= link_to 'Edit', edit_blood_bank_path(@blood_bank) %> |
-<%= link_to 'Back', blood_banks_path %>
+  <p>
+    <strong>Numeros de téléphone:</strong>
+    <%= @blood_bank.number1 %> ||
+    <%= @blood_bank.number2 %>
+  </p>
+  <p>
+    <strong>Number2:</strong>
+    <%= @blood_bank.number2 %>
+  </p>
+  <div class="panel panel-default" style="width: 50%;">
+     <div class="panel-heading">Asurances prises en charges</div>
+     <table class="table">
+       <thead>
+         <tr>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+           <% @blood_bank.insurances.each do |insurance|%>
+             <tr>
+               <td>
+                 <%= insurance.name%>
+               </td>
+           <% end %>
+       </tbody>
+     </table>
+   </div>
+   <%= link_to 'Back', blood_banks_path, class: "btn btn-info"  %>
+  </div>

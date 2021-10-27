@@ -1,13 +1,19 @@
+<div class="after_nav_detail_page">
+  <p class="look_hospital">Détail hôpital</p>
+  <p class="place">You are at the rigth place</p>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nom:</strong>
   <%= @hospital.name %>
 </p>
 
 <p>
-  <strong>Area:</strong>
-  <%= @hospital.area %>
+  <strong>Quartier:</strong>
+  <%= @hospital.area.name %>
 </p>
 
 <p>
@@ -16,19 +22,64 @@
 </p>
 
 <p>
-  <strong>Googlemap link:</strong>
-  <%= @hospital.googlemap_link %>
+  <strong>Adresse google maps:</strong>
+  <a class="lien_google" href="<%= @hospital.googlemap_link %>"> Lien </a>
 </p>
 
 <p>
-  <strong>Number1:</strong>
-  <%= @hospital.number1 %>
-</p>
-
-<p>
-  <strong>Number2:</strong>
+  <strong>Numeros de téléphone:</strong>
+  <%= @hospital.number1 %> ||
   <%= @hospital.number2 %>
 </p>
 
-<%= link_to 'Edit', edit_hospital_path(@hospital) %> |
-<%= link_to 'Back', hospitals_path %>
+<p>
+  <div class="panel panel-default" style="width: 50%;">
+    <div class="panel-heading">Asurances prises en charges</div>
+    <table class="table">
+      <tbody>
+          <% @hospital.insurances.each do |insurance|%>
+            <tr>
+              <td>
+                <%= insurance.name%>
+              </td>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+
+<strong>Specialité</strong>
+<div class="panel panel-default">
+  <div class="panel-heading">Specialités / Heures de consultations</div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Specialités</th>
+        <th>Heure de consultations</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @hospital.specialities.each do |speciality| %>
+          <tr>
+            <td>
+              <%= speciality.name %>
+            </td>
+            <td>
+              <% timetables = get_hospital_speciality(@hospital.id, speciality.id).timetables %>
+              <%  timetables.each do |timetable| %>
+                <strong>
+                  <%= timetable.day %>: <%= timetable.start_hour %> à <%= timetable.end_hour %>
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<%= link_to 'Retour', hospitals_path, class: "btn btn-info" %>
+  </div>

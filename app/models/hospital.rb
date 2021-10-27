@@ -11,7 +11,10 @@ class Hospital < ApplicationRecord
    # has_many :timetables, through: :timetables, source: :hospital_speciality
    has_many :hospital_specialities, dependent: :delete_all
    has_many :hospital_insurances, dependent: :delete_all
-
+#
+   has_many :insurances, through: :hospital_insurances, source: :insurance
+   has_many :specialities, through: :hospital_specialities, source: :speciality
+#
   # accepts_nested_attributes_for :timetables,  allow_destroy: true
   # accepts_nested_attributes_for :specialities,  allow_destroy: true
   accepts_nested_attributes_for :hospital_specialities, allow_destroy: true

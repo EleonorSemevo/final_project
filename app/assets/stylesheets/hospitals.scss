@@ -59,6 +59,11 @@ For hospitals uniquely
   height: 400px;
   padding: 3rem;
 }
+.after_nav_detail_page{
+  background-color: #241f39;
+  height: 200px;
+  padding: 3rem;
+}
 .look_hospital{
 font-size: 5rem;
 padding: 2rem;
@@ -105,4 +110,16 @@ text-align: center;
 
 .liste-commentaire{
   list-style: none;
+}
+
+.lien_google{
+  text-decoration: none !important;
+  color: blue !important;
+}
+.lien_google :hover{
+  text-decoration: underline !important;
+}
+.bouton-detail{
+  color: white !important;
+  
 }

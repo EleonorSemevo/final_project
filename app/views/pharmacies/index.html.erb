@@ -30,14 +30,13 @@
 
         <% @pharmacies.each do |pharmacy| %>
           <tr>
-          <td><%= pharmacy.name %></td>
-          <td><%= pharmacy.area.name %></td>
-          <td><%= pharmacy.all_nigth %></td>
-          <td><%= pharmacy.googlemap_link %></td>
-          <td><%= pharmacy.number1 %></td>
-          <td><%= pharmacy.number2 %></td>
-          <td><%= link_to 'Details', pharmacy %></td>
-
+            <td><%= pharmacy.name %></td>
+            <td><%= pharmacy.area.name %></td>
+            <td><%= pharmacy.all_nigth %></td>
+            <td> <a href="<%= pharmacy.googlemap_link %>" > Lien</a></td>
+            <td><%= pharmacy.number1 %></td>
+            <td><%= pharmacy.number2 %></td>
+            <td><%= link_to 'Details', pharmacy , class: "btn btn-primary bouton-detail"  %></td>
           </tr>
         <% end %>
       </tbody>

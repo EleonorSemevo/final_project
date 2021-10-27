@@ -1,3 +1,9 @@
+<div class="after_nav_detail_page">
+  <p class="look_hospital">Détail hôpital</p>
+  <p class="place">You are at the rigth place</p>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -21,14 +27,26 @@
 </p>
 
 <p>
-  <strong>Number1:</strong>
-  <%= @pharmacy.number1 %>
-</p>
-
-<p>
-  <strong>Number2:</strong>
+  <strong>Numeros de téléphone:</strong>
+  <%= @pharmacy.number1 %> ||
   <%= @pharmacy.number2 %>
 </p>
-
-<%= link_to 'Edit', edit_pharmacy_path(@pharmacy) %> |
-<%= link_to 'Back', pharmacies_path %>
+<div class="panel panel-default" style="width: 50%;">
+   <div class="panel-heading">Asurances prises en charges</div>
+   <table class="table">
+     <thead>
+       <tr>
+         <th></th>
+       </tr>
+     </thead>
+     <tbody>
+         <% @pharmacy.insurances.each do |insurance|%>
+           <tr>
+             <td>
+               <%= insurance.name%>
+             </td>
+         <% end %>
+     </tbody>
+   </table>
+ </div>
+<%= link_to 'Retour', pharmacies_path, class: "btn btn-info" %>

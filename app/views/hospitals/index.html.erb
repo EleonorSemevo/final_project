@@ -19,12 +19,12 @@
     <table class="list-table table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Area</th>
+          <th>Nom</th>
+          <th>Quartier</th>
           <th>Public</th>
-          <th>Googlemap link</th>
-          <th>Number1</th>
-          <th>Number2</th>
+          <th>Lien google map</th>
+          <th>Numéro de téléphone</th>
+          <th>Numéro de téléphone</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -35,10 +35,10 @@
             <td><%= hospital.name %></td>
             <td><%= hospital.area.name %></td>
             <td><%= hospital.public %></td>
-            <td><%= hospital.googlemap_link %></td>
+            <td> <a href="<%= hospital.googlemap_link %>" > Lien</a></td>
             <td><%= hospital.number1 %></td>
             <td><%= hospital.number2 %></td>
-            <td><%= link_to 'Details', hospital %></td>
+            <td><%= link_to 'Details', hospital, class: "btn btn-primary bouton-detail" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -52,5 +52,5 @@
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
     </div>
   </div>
-  
+
 </div>
