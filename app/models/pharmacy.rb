@@ -1,4 +1,9 @@
 class Pharmacy < ApplicationRecord
+  validates :name,  presence: true
+  validates :area_id,  presence: true
+
+
+
   belongs_to :area
   # has_many :insurances, through: :pharmacy_insurances, source: :insurance
   has_many :pharmacy_insurances, dependent: :delete_all

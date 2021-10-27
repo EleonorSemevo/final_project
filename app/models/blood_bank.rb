@@ -1,4 +1,7 @@
 class BloodBank < ApplicationRecord
+    validates :name,  presence: true
+    validates :area_id,  presence: true
+
   belongs_to :area
 
   scope :search_name, ->(name){where('name like ?', name)}

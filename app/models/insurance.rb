@@ -1,3 +1,3 @@
 class Insurance < ApplicationRecord
-  # has_many :pharmacies, through: :pharmacy_insurances, source: :pharmacy
+  validates :name,  presence: true
 end
