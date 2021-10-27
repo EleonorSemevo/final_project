@@ -39,17 +39,7 @@ public = true
     googlemap_link: googlemap_link, number1: number1, number2: number1)
 end
 
-# 5.times do |m|
-#   name =Faker::Company.name
-#   public = public
-#   area_id = m
-#   googlemap_link = Faker::LoremFlickr.pixelated_image
-#   number1 = Faker::PhoneNumber.phone_number
-#   number2 = Faker::PhoneNumber.phone_number
-#
-#   Hospital.create(name: name, area_id: area_id, all_nigth: public,
-#     googlemap_link: googlemap_link, number1: number1, number2: number1)
-# end
+
 
 5.times do |m|
   HospitalSpeciality.create(hospital_id: m, speciality_id: m)
