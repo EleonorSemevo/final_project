@@ -10,4 +10,8 @@ module ApplicationHelper
   def get_hospital_speciality(hospital_id, speciality_id)
     HospitalSpeciality.find_by(hospital_id: hospital_id, speciality_id: speciality_id)
   end
+
+  def destroy_admin
+    
+  end
 end

@@ -16,7 +16,13 @@ ActiveAdmin.setup do |config|
         redirect_to new_session_path
       end
   end
-
+config.logout_link_path = :destroy_admin
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      # menu.add label: "Logouti", url: users_admin_path, priority: 14,  html_options: { class: 'btn btn-success'}
+       admin.add_logout_button_to_menu menu, html_options: {target: :blank}
+    end
+  end
 # menu customisation
 # config.namespace :admin do |admin|
 #   admin.build_menu do |menu|
