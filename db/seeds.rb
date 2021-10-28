@@ -30,7 +30,7 @@ public = true
 5.times do |m|
   name =Faker::Company.name
   public = public
-  area_id = m
+  area_id = m+1
   googlemap_link = Faker::LoremFlickr.pixelated_image
 
   number1 = Faker::PhoneNumber.phone_number
@@ -43,12 +43,12 @@ end
 
 
 5.times do |m|
-  HospitalSpeciality.create(hospital_id: m, speciality_id: m)
+  HospitalSpeciality.create(hospital_id: m+1, speciality_id: m+1)
 end
 
 5.times do |m|
   name =Faker::Company.name
-  area_id = m
+  area_id = m+1
   googlemap_link = Faker::LoremFlickr.pixelated_image
   number1 = Faker::PhoneNumber.phone_number
   number2 = Faker::PhoneNumber.phone_number
@@ -58,13 +58,13 @@ end
 end
 
 5.times do |m|
-  Timetable.create(hospital_speciality_id: m, day: m,
-    start_hour: m, end_hour: m+1)
+  Timetable.create(hospital_speciality_id: m+1, day: m+1,
+    start_hour: m+1, end_hour: m+1)
 end
 
 5.times do |m|
   name =Faker::Company.name
-  area_id = m
+  area_id = m+1
   googlemap_link = Faker::LoremFlickr.pixelated_image
   number1 = Faker::PhoneNumber.phone_number
   number2 = Faker::PhoneNumber.phone_number
@@ -74,26 +74,24 @@ end
 end
 
 5.times do |m|
-
-
-  PharmacyInsurance.create(pharmacy_id: m, insurance_id: m)
+  PharmacyInsurance.create(pharmacy_id: m+1, insurance_id: m+1)
 end
 
 5.times do |m|
-  HospitalInsurance.create(hospital_id: m, insurance_id: m)
+  HospitalInsurance.create(hospital_id: m+1, insurance_id: m+1)
 end
 
 5.times do |m|
-  BloodBankInsurance.create(blood_bank_id: m, insurance_id: m)
+  BloodBankInsurance.create(blood_bank_id: m+1, insurance_id: m+1)
 end
 
 5.times do |m|
   content = Faker::Lorem.characters(number: 50, min_alpha: 4, min_numeric: 1)
-  Comment.create(user_id: m, content: content)
+  Comment.create(user_id: m+1, content: content)
 end
 
 5.times do |m|
-  Favorite.create(user_id: m, comment_id: m)
+  Favorite.create(user_id: m+1, comment_id: m+1)
 end
 
-User.create(name: 'admin', email: 'admin@gmail.com', admin: true, password: 'admin123')
+User.create(name: 'admin', email: 'admin@gmail.com', admin: true, password: 'admin123', password_confirmation: 'admin123')
