@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :favorites
   get "/", to: "hospitals#index", as: 'hospitals'
+   get "/session/admin", to: "sessions#admin", as: 'new_session_admin'
+
   # put "/comments/favorite/:id", to: "comments#make_favorite", as: 'make_favorites'
   resources :comments
   # get 'sessions/new'
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   # resources :timetables, only: [:index, :show]
   resources :blood_banks, only: [:index, :show]
   resources :pharmacies, only: [:index, :show]
+  # resources :hospitals, only: [:index, :show]
 
   ActiveAdmin.routes(self)
   resources :hospitals
