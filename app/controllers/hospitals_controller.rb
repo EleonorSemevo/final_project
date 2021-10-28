@@ -48,7 +48,8 @@ class HospitalsController < ApplicationController
       search_speciality(speciality_id)
     end
   end
-end
+  @hospitals = @hospitals.page(params[:page]).per(15)
+  end
 
 
 

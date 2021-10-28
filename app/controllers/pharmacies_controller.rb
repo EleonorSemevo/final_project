@@ -27,7 +27,8 @@ def index
     elsif name =='' && area_id =='' && town_id != ''
       @pharmacies = search_for_town(town)
    end
- end
+  end
+    @pharmacies = @pharmacies.page(params[:page]).per(15)
 end
 
   private

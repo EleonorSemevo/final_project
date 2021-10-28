@@ -55,5 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activeadmin'
 gem 'bcrypt'
+gem 'kaminari'
+
 
 gem 'jquery-rails'

@@ -43,6 +43,8 @@
     </table>
   </div>
 
+<%= paginate @pharmacies %>
+
   <div class="comments">
     <p>You can leave a comment</p>
     <%= render partial: 'comments/form', locals: { comment: @comment} %>

@@ -27,7 +27,9 @@ class BloodBanksController < InheritedResources::Base
       elsif name =='' && area_id =='' && town_id != ''
         @blood_banks = search_for_town(town)
      end
-   end
+    end
+
+    @blood_banks = @blood_banks.page(params[:page]).per(15)
   end
 
   private
