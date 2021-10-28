@@ -4,6 +4,7 @@
   "dependencies": {
     "bootstrap": "3",
     "jquerry": "^0.0.1-security",
-    "jquery": "3.5.1"
+    "jquery": "3.5.1",
+    "vue-turbolinks": "^2.2.2"
   }
 }
