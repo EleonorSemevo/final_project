@@ -32,7 +32,8 @@
                 <% else %>
                   <li class="menu-item"><%= link_to "S'enrégistrer", new_user_path, class:"nav-item" %></li>
                   <li class="menu-item"><%= link_to "Se connecter", new_session_path, class:"nav-item" %></li>
-                  <li class="menu-item"><%= link_to "Admin invité", new_session_admin_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to t("button.guest_user"), guest_user_path, method: :post, class: " me-2 btn btn-success "%></li>
+                  <li class="menu-item"><%= link_to t("button.guest_admin"), guest_admin_path, method: :post, class: " me-2 btn btn-success "%></li>
                 <% end %>
                 <% if current_user.present? %>
                   <% if current_user.admin %>

@@ -1,11 +1,30 @@
 class SessionsController < ApplicationController
   # skip_before_action :login_required, only: [:new, :create]
-  before_action :already_logged_in, only: [:new, :create]
+  # before_action :already_logged_in, only: [:new]
 
  def new
  end
 
- def admin
+ def guest_user
+   user = User.find_by(email: 'guest@gmail.com')
+   if user && user.authenticate('guest1234')
+     session[:user_id] = user.id
+       redirect_to hospitals_path
+       flash[:notice] = "Loggin successfully!"
+   else
+     flash[:notice] = "Loggin error!"
+   end
+ end
+
+ def guest_admin
+   user = User.find_by(email: 'guestadmin@gmail.com')
+   if user && user.authenticate('guestadmin123')
+     session[:user_id] = user.id
+     flash[:notice] = "Loggin successfully!"
+     redirect_to admin_users_path
+   else
+     flash[:notice] = "Loggin error!"
+   end
  end
 
 
@@ -15,7 +34,7 @@ class SessionsController < ApplicationController
      session[:user_id] = user.id
 
      if user.admin
-       flash[:notice] = "Log in successfully!"
+       flash[:notice] = "Logged in successfully!"
        redirect_to admin_users_path
      else
        redirect_to hospitals_path

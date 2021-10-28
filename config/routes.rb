@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   resources :favorites
   get "/", to: "hospitals#index", as: 'hospitals'
-   get "/session/admin", to: "sessions#admin", as: 'new_session_admin'
+   # get "/session/admin", to: "sessions#admin", as: 'new_session_admin'
 
   # put "/comments/favorite/:id", to: "comments#make_favorite", as: 'make_favorites'
+  post "/guest_user", to: "sessions#guest_user", as: 'guest_user'
+  post "/guest_admin", to: "sessions#guest_admin", as: 'guest_admin'
+
   resources :comments
   # get 'sessions/new'
   resources :sessions, only: [:new, :create, :show, :destroy]

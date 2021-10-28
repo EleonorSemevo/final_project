@@ -95,3 +95,5 @@ end
 end
 
 User.create(name: 'admin', email: 'admin@gmail.com', admin: true, password: 'admin123', password_confirmation: 'admin123')
+User.create(name: 'guest', email: 'guest@gmail.com', password: 'guest1234', password_confirmation: 'guest1234')
+User.create(name: 'guest admin', email: 'guestadmin@gmail.com', admin: true, password: 'guestadmin123', password_confirmation: 'guestadmin123')
