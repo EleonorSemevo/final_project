@@ -14,8 +14,8 @@ end
 end
 
 5.times do |m|
-  name =Faker::String.random
-  town = Faker::String.name
+  name =Faker::Movie.title
+  town = Faker::Movie.quote
   Area.create(name: name, town: town)
 end
 
