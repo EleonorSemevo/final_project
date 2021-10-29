@@ -18,9 +18,9 @@ RSpec.describe 'User management', type: :system do
 
     context 'When user logged in' do
       it 'shows the logout button' do
-        FactoryBot.create(:user, name: 'Loren', email: 'damy@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+        FactoryBot.create(:user, name: 'Loren', email: 'dame@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
         visit new_session_path
-        fill_in 'Email' , with: 'damy@gmail.com'
+        fill_in 'Email' , with: 'dame@gmail.com'
         fill_in 'Password' , with: '123456'
         click_on 'Login'
         expect(page).to have_content 'Se déconnecter'
@@ -38,38 +38,46 @@ RSpec.describe 'User management', type: :system do
     #    click_on 'Login'
     # end
 
-    context 'user can access hospitals page without login' do
-      it 'access hospitals path' do
+    context 'When user click on hospitals link without login' do
+      it 'can ccess hospitals page' do
         visit hospitals_path
         expect(page).to have_content 'hospital'
       end
     end
     #
-    context 'user can access pharmacies page without login' do
+    context 'When user click on pharmacies link without login' do
       it 'access pharmacies path' do
         visit pharmacies_path
         expect(page).to have_content 'pharmacy'
       end
     end
     #
-    context 'user can access blood bank page without login' do
-      it 'access pharmacies path' do
+    context 'When user click on blood bank link without login' do
+      it 'can access blood bank page' do
         visit blood_banks_path
         expect(page).to have_content 'blood bank'
       end
     end
 
-    context 'user cannot submit comment without login' do
-      it 'access pharmacies path' do
+    context 'When user submit comment without login' do
+      it 'will be redirected to login page' do
         visit hospitals_path
-        fill_in 'Contenu' , with: 'Morning thing!'
+        fill_in 'Content' , with: 'Morning thing!'
         click_on 'Envoyer'
         expect(page).to have_content 'Se connecter pour laisser un commentaire'
       end
     end
-    #
-    # context 'user cannot update comment without login' do
-    # end
+
+    context 'When user click on like button without login ' do
+      user = FactoryBot.create(:user, name: 'Loren', email: 'moonli@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+      Comment.create(user_id: user.id, content: "content")
+
+      it 'will be redirected to login page' do
+        visit hospitals_path
+        click_on 'Like'
+        expect(page).to have_content 'Se connecter pour laisser un commentaire'
+      end
+    end
     #
     # context 'user cannot delete comment without login' do
     # end

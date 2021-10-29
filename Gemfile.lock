@@ -277,6 +277,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   factory_bot_rails
   faker
+  i18n
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

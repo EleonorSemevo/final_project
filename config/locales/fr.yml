@@ -359,5 +359,24 @@ fr:
       blog: "Blog"
   # pour local
   mes_text:
-    content: contenu
-    loggin_flash: Vou êtes bien conneé
+    content: "contenu"
+    loggin_flash: "Vous êtes bien connecté"
+    nav_hospital: "Vous cherchez un hôpital ?"
+    nav_pharmacy: "Vous chercher une pharmacie ?"
+    nav_bllod_bank: "Vous cherchez une banque de sang ?"
+    nav_rigth_place: "Vous êtes à la bonne place."
+    leave_comment: "vous pouvez laisser un commentaires"
+    like: "Aimer"
+    detail: "Ne pas aimer"
+    retour: "Retour"
+    dashboard_custum_text: "Bienvenu sur votre panel Findpharma"
+    editer: "Modifier"
+    login: "Se connecter"
+    logout: "Se déconnecter"
+    guest_admin: "Admin invité"
+    guest_use: "User invité"
+    select_town: "Selectonner ville"
+    select_area: "Selectionner quartier"
+    search: "chercher"
+    link: "Lien"
+    speciality: "Selectionner specialité"

@@ -1,17 +1,17 @@
 
 <div class="after_nav">
-  <p class="look_hospital">Are you looking for a hospital?</p>
-  <p class="place">You are at the rigth place</p>
+  <p class="look_hospital"> <%= I18n.t 'mes_text.nav_hospital'%></p>
+  <p class="place"> <%=  I18n.t 'mes_text.nav_rigth_place'  %></p>
 
   <div class="search-block">
     <%= form_with(scope: :hospital, url: hospitals_path, method: :get, local: true ) do |form|%>
 
 	  <%= form.label :name, class: 'col-md-1 wite-color' %>
-	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: 'search...' %>
+	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: (I18n.t 'mes_text.search') %>
 	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1 selection", style:"width: 300px;", prompt: 'select town') %>
     <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
     <%= form.collection_select(:speciality_id, Speciality.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select speciality') %>
-    <%= form.submit 'Search', class: 'btn btn-default'%>
+    <%= form.submit I18n.t 'mes_text.search', class: 'btn btn-default'%>
 
  <% end %>
   </div>

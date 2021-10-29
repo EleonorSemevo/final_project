@@ -25,9 +25,10 @@ ActiveAdmin.register Hospital do
         f.has_many :hospital_specialities, sortable: :id, sortable_start: 1 do |t|
           t.input :speciality_id, as: 'select', collection: Speciality.all
             t.has_many :timetables, allow_destroy: true do |m|
-              m.input :day
-              m.input :start_hour
-              m.input :end_hour
+              # m.input :day
+              m.input :day,  :as => :select, :collection =>  ['Lundi','Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+              m.input :start_hour, :as => :select, :collection =>  [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+              m.input :end_hour, :as => :select, :collection =>  [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
             end
         end
 
@@ -58,7 +59,7 @@ ActiveAdmin.register Hospital do
       @hospital = Hospital.create(params.require(:hospital).permit(:name, :area_id, :public, :googlemap_link, :number1, :number2,:town_id))
       hospital_params = params[:hospital][:hospital_specialities_attributes]
       if   params[:hospital][:hospital_specialities_attributes].present?
-        params[:hospital][:hospital_specialities_attributes].each do |p|
+        hospital_params.each do |p|
           @h_p = HospitalSpeciality.create(hospital_id: @hospital.id, speciality_id: p.last[:speciality_id].to_i)
         if p.last[:timetables_attributes].present?
           p.last[:timetables_attributes].each do |m|
