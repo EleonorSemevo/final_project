@@ -3,8 +3,10 @@ class HospitalsController < ApplicationController
 
   # GET /hospitals or /hospitals.json
   def home
+    @comments = Comment.all
+    @comment = Comment.new
   end
-  
+
   def index
     @comments = Comment.all
     @comment = Comment.new

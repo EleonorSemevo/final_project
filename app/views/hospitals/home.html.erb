@@ -1,0 +1,51 @@
+
+<div class="after_home_nav">
+  <p class="home_title ">PHindpharma,  votre compagon de tous les jours </p>
+  <p style="color: white; font-size: 18px;">Une application qui est un catalogue de la liste des centres
+     (hôpital, pharmacie et banque de sang ) au Bénin  où n’importe quel utilisateur
+      pourra effectuer des recherches selon différents critères</p>
+      <%= link_to 'Visitez', hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
+
+
+
+
+
+
+
+</div>
+
+<div class="row" style="background-color: #fafafa;">
+  <div class="col-md-5">
+    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;">Chercher facilement un hôpital de votre choix</p>
+
+
+  </div>
+  <div class="col-md-5">
+    <p style="font-size: 20px;line-height: 1.8em;padding: 3rem;">Cherchez facilement un hopital selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom, spécialité</p>
+        <%= link_to 'Visitez', hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
+  </div>
+</div>
+<div class="row" style="background-color: #0c6645; color: white;">
+  <div class="col-md-5">
+    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;">Chercher facilement une pharmacie de votre choix</p>
+    <p style="font-size: 20px;line-height: 1.8em; margin-left: 3rem;">Cherchez facilement une pharmacie selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom, spécialité</p>
+        <%= link_to 'Visitez', pharmacies_path, class: 'btn btn-info', style: "color: white; text-decoration: none; margin-left: 3rem;" %>
+
+
+  </div>
+  <div class="col-md-5" style = "padding: 3rem;">
+    <p style="font-size: 48px; line-height: 1.8em;">Chercher facilement une banque de sang de votre choix</p>
+    <p style="font-size: 20px;line-height: 1.8em;">Cherchez facilement une banque de sang selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom</p>
+        <%= link_to 'Visitez', blood_banks_path, class: 'btn btn-info', style: "color: white; text-decoration: none; " %>
+  </div>
+</div>
+  <div class="comments" style="padding-left: 3rem;">
+    <p> <%= I18n.t 'mes_text.leave_comment' %></p>
+    <%= render partial: 'comments/form', locals: { comment: @comment} %>
+    <div id="comments_area" class="">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+  </div>
