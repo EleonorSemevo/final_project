@@ -29,14 +29,14 @@ RSpec.describe 'User management', type: :system do
   end
 
   describe 'Restricton access to resources' do
-    before do
-        # USER LOGIN BEFORE ANYTHING HERE
-       FactoryBot.create(:user, name: 'Loren', email: 'damy@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
-       visit new_session_path
-       fill_in 'Email' , with: 'damy@gmail.com'
-       fill_in 'Password' , with: '123456'
-       click_on 'Login'
-    end
+    # before do
+    #     # USER LOGIN BEFORE ANYTHING HERE
+    #    FactoryBot.create(:user, name: 'Loren', email: 'damy@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+    #    visit new_session_path
+    #    fill_in 'Email' , with: 'damy@gmail.com'
+    #    fill_in 'Password' , with: '123456'
+    #    click_on 'Login'
+    # end
 
     context 'user can access hospitals page without login' do
       it 'access hospitals path' do
@@ -45,14 +45,28 @@ RSpec.describe 'User management', type: :system do
       end
     end
     #
-    # context 'user can access pharmacies page without login' do
-    # end
+    context 'user can access pharmacies page without login' do
+      it 'access pharmacies path' do
+        visit pharmacies_path
+        expect(page).to have_content 'pharmacy'
+      end
+    end
     #
-    # context 'user can access blood bank page without login' do
-    # end
-    #
-    # context 'user cannot submit comment without login' do
-    # end
+    context 'user can access blood bank page without login' do
+      it 'access pharmacies path' do
+        visit blood_banks_path
+        expect(page).to have_content 'blood bank'
+      end
+    end
+
+    context 'user cannot submit comment without login' do
+      it 'access pharmacies path' do
+        visit hospitals_path
+        fill_in 'Contenu' , with: 'Morning thing!'
+        click_on 'Envoyer'
+        expect(page).to have_content 'Se connecter pour laisser un commentaire'
+      end
+    end
     #
     # context 'user cannot update comment without login' do
     # end

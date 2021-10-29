@@ -6,6 +6,9 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "Findpharma"
+  #config/initializers/active_admin.rb
+config.before_action :set_admin_locale
+
   def ensure_admin!
       # raise ActionController::RoutingError.new('Not Found') if current_user.admin == nil
       if current_user.present?
@@ -16,13 +19,7 @@ ActiveAdmin.setup do |config|
         redirect_to new_session_path
       end
   end
-config.logout_link_path = :destroy_admin
-  config.namespace :admin do |admin|
-    admin.build_menu do |menu|
-      # menu.add label: "Logouti", url: users_admin_path, priority: 14,  html_options: { class: 'btn btn-success'}
-       admin.add_logout_button_to_menu menu, html_options: {target: :blank}
-    end
-  end
+
 # menu customisation
 # config.namespace :admin do |admin|
 #   admin.build_menu do |menu|
@@ -149,7 +146,30 @@ config.logout_link_path = :destroy_admin
   # link. For example :get, :delete, :put, etc..
   #
   # Default:
-  # config.logout_link_method = :get
+  config.logout_link_method = :delete
+
+    # config.namespace :admin do |admin|
+    #   admin.build_menu do |menu|
+    #     # menu.add label: "Logouti", url: users_admin_path, priority: 14,  html_options: { class: 'btn btn-success'}
+    #      admin.add_logout_button_to_menu menu, html_options: {target: :blank}
+    #   end
+    # end
+    config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add  :label  => 'se déconnecter', # text of your link
+        :url            => proc{ logout_admin_path },
+        :html_options   => {:style => 'float:left;'}, # attributes added in the DOM of your link
+        :if             => proc{ 1 < 2 } # condition to display the link
+
+      menu.add  :label  => proc{ display_name current_user.name }, # email of the current admin user logged
+        :url            => proc { user_path(current_user) },
+        :html_options   => {:style => 'float:left;'},
+        :id             => 'current_user',
+        :if             => proc{ current_user.email}
+
+      admin.add_logout_button_to_menu menu, 100, :style => 'float:left;' # logout link
+    end
+  end
 
   # == Root
   #

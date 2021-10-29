@@ -47,9 +47,14 @@ class SessionsController < ApplicationController
 
  def destroy
    session.delete(:user_id)
-   flash[:notice] = "Logged out isuccessfully"
+   flash[:notice] = "Logged out successfully"
    redirect_to hospitals_path
  end
+# ce show est utilisé pour logout le admin
+def destroy_admin
+   session.delete(:user_id)
+  redirect_to hospitals_path
+end
 
  private
  def already_logged_in

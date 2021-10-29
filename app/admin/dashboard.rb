@@ -6,7 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
       span class: "blank_slate" do
         # span I18n.t("active_admin.dashboard_welcome.welcome")
         # small I18n.t("active_admin.dashboard_welcome.call_to_action")
-        span "welcome to Findpharma dashboard panel"
+        span "Bienvenu sur votre panel Findpharma"
       end
     end
 

@@ -10,10 +10,11 @@
     </div>
   <% end %>
   <div class="field">
+    <% text =  I18n.t 'content' %>
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Envoyer'%>
   </div>
 <% end %>

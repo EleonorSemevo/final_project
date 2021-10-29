@@ -12,6 +12,7 @@ module ApplicationHelper
   end
 
   def destroy_admin
-    
+    # current_user.destroy
+    redirect_to hospitals_path
   end
 end

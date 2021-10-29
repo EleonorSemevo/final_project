@@ -357,3 +357,7 @@ fr:
       block: "Liste"
       grid: "Grille"
       blog: "Blog"
+  # pour local
+  mes_text:
+    content: contenu
+    loggin_flash: Vou êtes bien conneé
