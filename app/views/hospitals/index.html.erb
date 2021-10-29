@@ -8,9 +8,9 @@
 
 	  <%= form.label :name, class: 'col-md-1 wite-color' %>
 	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: (I18n.t 'mes_text.search') %>
-	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1 selection", style:"width: 300px;", prompt: 'select town') %>
-    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
-    <%= form.collection_select(:speciality_id, Speciality.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select speciality') %>
+	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1 selection", style:"width: 300px;", prompt: (I18n.t 'mes_text.select_town')) %>
+    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt:  (I18n.t 'mes_text.select_area')) %>
+    <%= form.collection_select(:speciality_id, Speciality.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt:  (I18n.t 'mes_text.select_speciality')) %>
     <%= form.submit I18n.t 'mes_text.search', class: 'btn btn-default'%>
 
  <% end %>
@@ -19,12 +19,12 @@
     <table class="list-table table table-hover">
       <thead>
         <tr>
-          <th>Nom</th>
-          <th>Quartier</th>
-          <th>Public</th>
-          <th>Lien google map</th>
-          <th>Numéro de téléphone</th>
-          <th>Numéro de téléphone</th>
+          <th><%= I18n.t 'mes_text.name' %></th>
+          <th><%= I18n.t 'mes_text.area' %></th>
+          <th><%= I18n.t 'mes_text.public' %></th>
+          <th><%= I18n.t 'mes_text.googlemap_link' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -35,10 +35,10 @@
             <td><%= hospital.name %></td>
             <td><%= hospital.area.name %></td>
             <td><%= hospital.public %></td>
-            <td> <a href="<%= hospital.googlemap_link %>" > Lien</a></td>
+            <td> <a href="<%= hospital.googlemap_link %>" > <%= I18n.t 'mes_text.link' %></a></td>
             <td><%= hospital.number1 %></td>
             <td><%= hospital.number2 %></td>
-            <td><%= link_to 'Details', hospital, class: "btn btn-primary bouton-detail" %></td>
+            <td><%= link_to (I18n.t 'mes_text.detail') , hospital, class: "btn btn-primary bouton-detail" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -47,7 +47,7 @@
   <%= paginate @hospitals %>
 
   <div class="comments">
-    <p>You can leave a comment</p>
+    <p> <%= I18n.t 'mes_text.leave_comment' %></p>
     <%= render partial: 'comments/form', locals: { comment: @comment} %>
     <div id="comments_area" class="">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>

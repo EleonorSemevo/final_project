@@ -8,9 +8,9 @@
 
         <% if logged_in? && current_user.id == comment.user_id %>
           <p>
-            <%= link_to "Edit comment", edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
+            <%= link_to (I18n.t 'mes_text.editer'), edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
 
-            <%= link_to "Delete comment", comment_path(comment), method: :delete, remote: true,
+            <%= link_to (I18n.t 'mes_text.delete'), comment_path(comment), method: :delete, remote: true,
               data: {confirm: "Do you really want to delete it?"}, class: "btn btn-danger bouton-supprimer" %>
           </p
         <% end %>
@@ -18,11 +18,11 @@
         <% if logged_in? && current_user.id != comment.user_id && !favorite?(comment.id) %>
           <%= link_to 'Like',  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
         <% elsif logged_in? && current_user.id != comment.user_id && favorite?(comment.id) %>
-            <%= link_to 'Dislike',  get_favorite(comment.id), method: :delete, class: 'btn btn-danger', style: "color: white;" %>
+            <%= link_to (I18n.t 'mes_text.unlike'),  get_favorite(comment.id), method: :delete, class: 'btn btn-danger', style: "color: white;" %>
         <% end %>
 
         <% unless logged_in?%>
-         <%= link_to "Like", favorite_path(comment,like: "true"), method: :update, style: 'color: green;' %>
+         <%= link_to (I18n.t 'mes_text.like'), favorite_path(comment,like: "true"), method: :update, style: 'color: green;' %>
         <% end %>
       </li>
     <% end %>
