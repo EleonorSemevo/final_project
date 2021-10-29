@@ -16,12 +16,11 @@
     <table class="list-table table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Area</th>
-          <th>All nigth</th>
-          <th>Googlemap link</th>
-          <th>Number1</th>
-          <th>Number2</th>
+          <th><%= I18n.t 'mes_text.name' %></th>
+          <th><%= I18n.t 'mes_text.area' %></th>
+          <th><%= I18n.t 'mes_text.googlemap_link' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -36,7 +35,7 @@
             <td> <a href="<%= pharmacy.googlemap_link %>" > Lien</a></td>
             <td><%= pharmacy.number1 %></td>
             <td><%= pharmacy.number2 %></td>
-            <td><%= link_to 'Details', pharmacy , class: "btn btn-primary bouton-detail"  %></td>
+            <td><%= link_to (I18n.t 'mes_text.detail'), pharmacy , class: "btn btn-primary bouton-detail"  %></td>
           </tr>
         <% end %>
       </tbody>

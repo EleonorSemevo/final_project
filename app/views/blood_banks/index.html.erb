@@ -1,16 +1,16 @@
 
 <div class="after_nav">
-  <p class="look_hospital">Are you looking for a blood bank?</p>
-  <p class="place">You are at the rigth place</p>
+  <p class="look_hospital"><%= I18n.t 'mes_text.nav_bllod_bank'%></p>
+  <p class="place"><%=  I18n.t 'mes_text.nav_rigth_place'  %></p>
 
   <div class="search-block">
     <%= form_with(scope: :blood_bank, url: blood_banks_path, method: :get, local: true ) do |form|%>
 
 	  <%= form.label :name, class: 'col-md-1 wite-color' %>
-	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: 'search...' %>
-	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: 'select town') %>
-    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: 'select area') %>
-    <%= form.submit 'Search', class: 'btn btn-default'%>
+	  <%= form.text_field :name, class: 'col-md-1',style: "padding: 7px; width: 300px;", placeholder: (I18n.t 'mes_text.search') %>
+	  <%= form.collection_select(:town_id, Area.all, :id, :town, class:"col-md-1", style:"width: 300px;", prompt: (I18n.t 'mes_text.select_town')) %>
+    <%= form.collection_select(:area_id, Area.all, :id, :name, class:"col-md-1", style:"width: 300px;", prompt: (I18n.t 'mes_text.select_area')) %>
+    <%= form.submit I18n.t 'mes_text.search', class: 'btn btn-default'%>
 
  <% end %>
   </div>
@@ -18,11 +18,11 @@
     <table class="list-table table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Area</th>
-          <th>Googlemap link</th>
-          <th>Number1</th>
-          <th>Number2</th>
+          <th><%= I18n.t 'mes_text.name' %></th>
+          <th><%= I18n.t 'mes_text.area' %></th>
+          <th><%= I18n.t 'mes_text.googlemap_link' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
+          <th><%= I18n.t 'mes_text.telephone' %></th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -35,19 +35,19 @@
             <td> <a href="<%= blood_bank.googlemap_link %>" > Lien</a></td>
             <td><%= blood_bank.number1 %></td>
             <td><%= blood_bank.number2 %></td>
-            <td><%= link_to 'Details', blood_bank, class: "btn btn-primary bouton-detail"  %></td>
+            <td><%= link_to (I18n.t 'mes_text.detail'), blood_bank, class: "btn btn-primary bouton-detail"  %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 <%= paginate @blood_banks %>
-  <div class="comments">
-    <p>You can leave a comment</p>
-    <%= render partial: 'comments/form', locals: { comment: @comment} %>
-    <div id="comments_area" class="">
-      <%= render partial: 'comments/index', locals: { comments: @comments } %>
-    </div>
+<div class="comments">
+  <p> <%= I18n.t 'mes_text.leave_comment' %></p>
+  <%= render partial: 'comments/form', locals: { comment: @comment} %>
+  <div id="comments_area" class="">
+    <%= render partial: 'comments/index', locals: { comments: @comments } %>
   </div>
+</div>
 
 </div>
