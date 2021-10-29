@@ -18,6 +18,7 @@
         <tr>
           <th><%= I18n.t 'mes_text.name' %></th>
           <th><%= I18n.t 'mes_text.area' %></th>
+          <th><%= I18n.t 'mes_text.all_nigth' %></th>
           <th><%= I18n.t 'mes_text.googlemap_link' %></th>
           <th><%= I18n.t 'mes_text.telephone' %></th>
           <th><%= I18n.t 'mes_text.telephone' %></th>
@@ -31,11 +32,17 @@
           <tr>
             <td><%= pharmacy.name %></td>
             <td><%= pharmacy.area.name %></td>
-            <td><%= pharmacy.all_nigth %></td>
-            <td> <a href="<%= pharmacy.googlemap_link %>" > Lien</a></td>
+            <td>
+              <% if  pharmacy.all_nigth %>
+                <span class="badge badge-success" style="background-color: green">YES</span>
+              <% else %>
+                <span class="badge badge-danger" style="background-color: red">NO</span>
+              <% end%>
+            </td>
+            <td> <a href="<%= pharmacy.googlemap_link %>" target= "_blank" > Lien</a></td>
             <td><%= pharmacy.number1 %></td>
             <td><%= pharmacy.number2 %></td>
-            <td><%= link_to (I18n.t 'mes_text.detail'), pharmacy , class: "btn btn-primary bouton-detail"  %></td>
+            <td><%= link_to (I18n.t 'mes_text.detail'), pharmacy , class: "btn btn-primary bouton-detail" %></td>
           </tr>
         <% end %>
       </tbody>

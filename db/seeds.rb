@@ -116,13 +116,13 @@ end
 # end
 
 Pharmacy.create(name: "Pharmacie les pylones", area_id: 1,
-googlemap_link: "https://goo.gl/maps/mydJmC377jwe6wuT8", number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
+googlemap_link: "https://goo.gl/maps/mydJmC377jwe6wuT8", all_nigth: true, number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
 Pharmacy.create(name: "Pharmacie cadjehoun", area_id: 2,
-googlemap_link: "https://goo.gl/maps/PbzRYHCZ8xCpmGq18", number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
+googlemap_link: "https://goo.gl/maps/PbzRYHCZ8xCpmGq18", all_nigth: true, truenumber1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
 Pharmacy.create(name: "Pharmacie Iita", area_id: 3,
-googlemap_link: "https://goo.gl/maps/ZBzdRWUow2NBfk1t5", number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
+googlemap_link: "https://goo.gl/maps/ZBzdRWUow2NBfk1t5", all_nigth: true, number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
 Pharmacy.create(name: "pharmacie de l'amitié", area_id: 4,
-googlemap_link: "https://goo.gl/maps/2itbwGzwarqv9kyE7", number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
+googlemap_link: "https://goo.gl/maps/2itbwGzwarqv9kyE7",  number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
 Pharmacy.create(name: "Pharmacie Togoudo", area_id: 5,
 googlemap_link: "https://goo.gl/maps/SzLo2dtEfsGnZThT8", number1: Faker::PhoneNumber.phone_number, number2: Faker::PhoneNumber.phone_number)
 

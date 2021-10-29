@@ -66,6 +66,7 @@ en:
     hospitals: "Hospitals"
     count: "Account"
     register: "Register"
+    all_nigth: "All nigth"
   home:
     home_title: 'PHindpharma, your everyday companion'
     home_second_title: "An application which is a catalog of the list of centers
