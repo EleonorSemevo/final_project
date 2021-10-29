@@ -37,10 +37,58 @@
         <%= link_to (I18n.t 'home.visit'), blood_banks_path, class: 'btn btn-info', style: "color: white; text-decoration: none; " %>
   </div>
 </div>
-  <div class="comments" style="padding-left: 3rem;">
-    <p> <%= I18n.t 'mes_text.leave_comment' %></p>
-    <%= render partial: 'comments/form', locals: { comment: @comment} %>
-    <div id="comments_area" class="">
-      <%= render partial: 'comments/index', locals: { comments: @comments } %>
-    </div>
+<div class="row" style="background-color: white; padding: 3rem;"">
+  <div class="info-admin col-md-6" style="text-align: justify;  padding: 3rem;">
+    <h2>If You are an admin and want to create a hospital</h2>
+    <ul>
+      <li>Click on Guest Admin to log in to the admin panel</li>
+      <li>On the panel menu, click on "hospitals"</li>
+      <li>On the rigth corner at the bottom of the menu, click on "New hospital" button.</li>
+      <li>Fill the form which will be presented</li>
+      <li>In the form, you have the possibility to add as many as specialities you want to the hospital
+      you are creating by clicking on "add new hospital speciality" which is at the bottom of the form. </li>
+      <li>On each nested form to add specialty, you have also the possibility to add the
+        timetables to the speciality as many as
+         you wante by clicking on "add new timetable" which is on the specialty nested form</li>
+         <li>You also have the possibility to add insurances company to that hospital by clicking on "add new hospital insurance"</li>
+         <li>Click on "Create Hospital" when you are done</li>
+         <li>Correct any validation errors you get Click on "Create Hospital" when you are done</li>
+    </ul>
+
+    This process goes to any model you want to create as an admin. But this time clicking on the correspondant Name
+    of the model you want to add
   </div>
+  <div class="info-admin col-md-6" style="text-align: justify;  padding: 3rem;">
+    <h2>If You are an admin and want to create a pharmacy</h2>
+    <ul>
+      <li>Click on Guest Admin to log in to the admin panel</li>
+      <li>On the panel menu, click on "pharmacies"</li>
+      <li>On the rigth corner at the bottom of the menu, click on "New pharmacy" button.</li>
+      <li>Fill the form which will be presented</li>
+     <li>You have the possibility to add insurances companies to that pharmacy by clicking on "add new pharmacy insurance"</li>
+     <li>Click on "Create Pharmacy" when you are done</li>
+     <li>Correct any validation errors you get and Click on "Create Pharmacy" when you are done</li>
+    </ul>
+  </div>
+</div>
+<div class="row" style="background-color: white; padding: 3rem;"">
+  <div class="info-admin col-md-6" style="text-align: justify;  padding: 3rem;">
+    <h2>If You are an admin and want to create a blood bank</h2>
+    <ul>
+      <li>Click on Guest Admin to log in to the admin panel</li>
+      <li>On the panel menu, click on "Blood Banks"</li>
+      <li>On the rigth corner at the bottom of the menu, click on "New Blood Bank" button.</li>
+      <li>Fill the form which will be presented</li>
+     <li>You have the possibility to add insurances companies to that blood bank by clicking on "add new blood bank insurance"</li>
+     <li>Click on "Create Blood Bank" when you are done</li>
+     <li>Correct any validation errors you get and Click on "Create Pharmacy" when you are done</li>
+    </ul>
+  </div>
+</div>
+<div class="comments" style="padding-left: 3rem;">
+  <p> <%= I18n.t 'mes_text.leave_comment' %></p>
+  <%= render partial: 'comments/form', locals: { comment: @comment} %>
+  <div id="comments_area" class="">
+    <%= render partial: 'comments/index', locals: { comments: @comments } %>
+  </div>
+</div>
