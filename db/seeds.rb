@@ -14,11 +14,17 @@ end
   Speciality.create(name: name)
 end
 
-5.times do |m|
-  name =Faker::Movie.title
-  town = Faker::Movie.quote
-  Area.create(name: name, town: town)
-end
+# 5.times do |m|
+#   name =Faker::Movie.title
+#   town = Faker::Movie.quote
+#   Area.create(name: name, town: town)
+# end
+
+Area.create(name: 'Zogbadje', town: 'Calavi')
+Area.create(name: 'Togoudo', town: 'Calavi')
+Area.create(name: 'Minnontin', town: 'Cotonou')
+Area.create(name: 'Agla', town: 'Cotonou')
+Area.create(name: 'Fifadji', town: 'Cotonou')
 
 5.times do |m|
   name =Faker::Company.name
