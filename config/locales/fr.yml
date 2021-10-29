@@ -388,3 +388,8 @@ fr:
     googlemap_link: "Lien google map *"
     telephone: "Numéro de téléphone"
     delete: "Supprimer"
+    pharmacies: "Pharmacies"
+    blood_banks: "Banques de sang"
+    hospitals: "Hôpitaux"
+    count: "Compte"
+    register: "S'enregistré"

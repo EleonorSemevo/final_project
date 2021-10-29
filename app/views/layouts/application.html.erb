@@ -20,18 +20,19 @@
           <nav>
             <ul class="nav nav-pills " style="">
               <li class="">
-                <%= link_to "Findpharma", hospitals_path, class:"menu-item logo"%>
+                <%= link_to "Findpharma", root_path, class:"menu-item logo"%>
               </li>
               <div class="menu-item-rigth">
-                <li class="menu-item"><%= link_to "Pharmacies", pharmacies_path, class:"nav-item"%></li>
-                <li class="menu-item"><%= link_to "Banque de sang", blood_banks_path, class:"nav-item"%></li>
+                <li class="menu-item"><%= link_to (I18n.t 'mes_text.hospitals'), hospitals_path, class:"nav-item"%></li>
+                <li class="menu-item"><%= link_to (I18n.t 'mes_text.pharmacies'), pharmacies_path, class:"nav-item"%></li>
+                <li class="menu-item"><%= link_to (I18n.t 'mes_text.blood_banks'), blood_banks_path, class:"nav-item"%></li>
 
                 <% if current_user.present? %>
-                  <li class="menu-item"><%= link_to "Compte", user_path(current_user), class:"nav-item" %></li>
-                  <li class="menu-item"><%= link_to "Se déconnecter", session_path(current_user.id), method: :delete, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to (I18n.t 'mes_text.count'), user_path(current_user), class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to (I18n.t 'mes_text.logout'), session_path(current_user.id), method: :delete, class:"nav-item" %></li>
                 <% else %>
                   <li class="menu-item"><%= link_to "S'enrégistrer", new_user_path, class:"nav-item" %></li>
-                  <li class="menu-item"><%= link_to "Se connecter", new_session_path, class:"nav-item" %></li>
+                  <li class="menu-item"><%= link_to (I18n.t 'mes_text.login'), new_session_path, class:"nav-item" %></li>
                   <li class="menu-item"><%= link_to t("button.guest_user"), guest_user_path, method: :post, class: " me-2 btn btn-success "%></li>
                   <li class="menu-item"><%= link_to t("button.guest_admin"), guest_admin_path, method: :post, class: " me-2 btn btn-success "%></li>
                 <% end %>

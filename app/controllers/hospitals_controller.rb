@@ -2,6 +2,9 @@ class HospitalsController < ApplicationController
   before_action :set_hospital, only: %i[ show edit update destroy ]
 
   # GET /hospitals or /hospitals.json
+  def home
+  end
+  
   def index
     @comments = Comment.all
     @comment = Comment.new

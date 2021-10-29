@@ -61,3 +61,8 @@ en:
     googlemap_link: "Google map link"
     telephone: "Phone number"
     delete: "Delete"
+    pharmacies: "Pharmacies"
+    blood_banks: "Blood banks"
+    hospitals: "Hospitals"
+    count: "Account"
+    register: "Register"

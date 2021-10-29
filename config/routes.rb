@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   resources :favorites
-  get "/", to: "hospitals#index", as: 'hospitals'
+  get "/", to: "hospitals#home", as: 'root'
+  # get "/", to: "hospitals#index", as: 'hospitals'
   get '/logout', to: "sessions#destroy_admin", as: 'logout_admin'
   post "/guest_user", to: "sessions#guest_user", as: 'guest_user'
   post "/guest_admin", to: "sessions#guest_admin", as: 'guest_admin'

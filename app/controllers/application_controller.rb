@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
 
 
   def set_admin_locale
-  I18n.locale = :fr
-end
+    I18n.locale = :fr
+  end
 
 
 end
