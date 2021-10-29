@@ -1,10 +1,8 @@
 
 <div class="after_home_nav">
-  <p class="home_title ">PHindpharma,  votre compagon de tous les jours </p>
-  <p style="color: white; font-size: 18px;">Une application qui est un catalogue de la liste des centres
-     (hôpital, pharmacie et banque de sang ) au Bénin  où n’importe quel utilisateur
-      pourra effectuer des recherches selon différents critères</p>
-      <%= link_to 'Visitez', hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
+  <p class="home_title "><%= I18n.t 'home.home_title' %> </p>
+  <p style="color: white; font-size: 18px;"><%= I18n.t 'home.home_second_title' %></p>
+      <%= link_to (I18n.t 'home.visit'), hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
 
 
 
@@ -16,30 +14,27 @@
 
 <div class="row" style="background-color: #fafafa;">
   <div class="col-md-5">
-    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;">Chercher facilement un hôpital de votre choix</p>
+    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;"><%= I18n.t 'home.search_hospital' %></p>
 
 
   </div>
   <div class="col-md-5">
-    <p style="font-size: 20px;line-height: 1.8em;padding: 3rem;">Cherchez facilement un hopital selon les critères de votre chois parmis
-      les propiétés suivant Quartier, ville, nom, spécialité</p>
+    <p style="font-size: 20px;line-height: 1.8em;padding: 3rem;"><%= I18n.t 'home.search_hospital_description' %></p>
         <%= link_to 'Visitez', hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
   </div>
 </div>
 <div class="row" style="background-color: #0c6645; color: white;">
   <div class="col-md-5">
-    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;">Chercher facilement une pharmacie de votre choix</p>
-    <p style="font-size: 20px;line-height: 1.8em; margin-left: 3rem;">Cherchez facilement une pharmacie selon les critères de votre chois parmis
-      les propiétés suivant Quartier, ville, nom, spécialité</p>
-        <%= link_to 'Visitez', pharmacies_path, class: 'btn btn-info', style: "color: white; text-decoration: none; margin-left: 3rem;" %>
+    <p style="font-size: 48px; line-height: 1.8em; padding: 3rem;"><%= I18n.t 'home.search_pharmacie' %></p>
+    <p style="font-size: 20px;line-height: 1.8em; margin-left: 3rem;"><%= I18n.t 'home.search_pharmacie_description' %></p>
+        <%= link_to (I18n.t 'home.visit'), pharmacies_path, class: 'btn btn-info', style: "color: white; text-decoration: none; margin-left: 3rem;" %>
 
 
   </div>
   <div class="col-md-5" style = "padding: 3rem;">
-    <p style="font-size: 48px; line-height: 1.8em;">Chercher facilement une banque de sang de votre choix</p>
-    <p style="font-size: 20px;line-height: 1.8em;">Cherchez facilement une banque de sang selon les critères de votre chois parmis
-      les propiétés suivant Quartier, ville, nom</p>
-        <%= link_to 'Visitez', blood_banks_path, class: 'btn btn-info', style: "color: white; text-decoration: none; " %>
+    <p style="font-size: 48px; line-height: 1.8em;"><%= I18n.t 'home.search_blood_bank' %></p>
+    <p style="font-size: 20px;line-height: 1.8em;"><%= I18n.t 'home.search_blood_bank_description' %></p>
+        <%= link_to (I18n.t 'home.visit'), blood_banks_path, class: 'btn btn-info', style: "color: white; text-decoration: none; " %>
   </div>
 </div>
   <div class="comments" style="padding-left: 3rem;">

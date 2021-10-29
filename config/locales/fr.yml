@@ -393,3 +393,19 @@ fr:
     hospitals: "Hôpitaux"
     count: "Compte"
     register: "S'enregistré"
+
+  home:
+    home_title: 'PHindpharma,  votre compagon de tous les jours'
+    home_second_title: 'Une application qui est un catalogue de la liste des centres
+       (hôpital, pharmacie et banque de sang ) au Bénin  où n’importe quel utilisateur
+        pourra effectuer des recherches selon différents critères'
+    visit: 'Visitez'
+    search_hospital: "Chercher facilement un hôpital de votre choix"
+    search_hospital_description: "Cherchez facilement un hopital selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom, spécialité"
+    search_pharmacie: "Chercher facilement une pharmacie de votre choix"
+    search_pharmacie_description: "Cherchez facilement une pharmacie selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom, spécialité"
+    search_pharmacie: "Chercher facilement une banque de sang de votre choix"
+    search_pharmacie_description: "Cherchez facilement une une banque de sang selon les critères de votre chois parmis
+      les propiétés suivant Quartier, ville, nom, spécialité"
