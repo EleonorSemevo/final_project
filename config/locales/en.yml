@@ -66,18 +66,18 @@ en:
     hospitals: "Hospitals"
     count: "Account"
     register: "Register"
-    home:
-      home_title: 'PHindpharma, your everyday companion'
-      home_second_title: "An application which is a catalog of the list of centers
-       (hospital, pharmacy and blood bank) in Benin where any user
-        will be able to carry out searches according to different criteria"
-      visit: 'Visit'
-      search_hospital: "Easily search for a hospital of your choice"
-      search_hospital_description:  "Easily find a hospital according to the criteria of your choice among
-      the following properties Neighborhood, city, name, specialty "
-      search_pharmacie: "Easily search for a pharmacy of your choice"
-      search_pharmacie_description: "Easily find a pharmacy according to the criteria of your choice among
-      the following properties Neighborhood, city, name, specialty "
-      search_blood_bank: "Easily search for a blood bank of your choice"
-      search_blood_bank_description: "Easily search for a blood bank according to the criteria of your choice among
-      the following properties Neighborhood, city, name, specialty "
+  home:
+    home_title: 'PHindpharma, your everyday companion'
+    home_second_title: "An application which is a catalog of the list of centers
+     (hospital, pharmacy and blood bank) in Benin where any user
+      will be able to carry out searches according to different criteria"
+    visit: 'Visit'
+    search_hospital: "Easily search for a hospital of your choice"
+    search_hospital_description:  "Easily find a hospital according to the criteria of your choice among
+    the following properties Neighborhood, city, name, specialty "
+    search_pharmacie: "Easily search for a pharmacy of your choice"
+    search_pharmacie_description: "Easily find a pharmacy according to the criteria of your choice among
+    the following properties Neighborhood, city, name, specialty "
+    search_blood_bank: "Easily search for a blood bank of your choice"
+    search_blood_bank_description: "Easily search for a blood bank according to the criteria of your choice among
+    the following properties Neighborhood, city, name, specialty "
