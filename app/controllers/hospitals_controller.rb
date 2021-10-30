@@ -52,8 +52,13 @@ class HospitalsController < ApplicationController
     elsif speciality_id != ''
       search_speciality(speciality_id)
     end
-  end
-  @hospitals = @hospitals.page(params[:page]).per(15)
+    end
+    if @hospitals.class == Array
+      @hospitals = Kaminari.paginate_array(@hospitals).page(15).per(1)
+    else
+      @hospitals = @hospitals.page(params[:page]).per(15)
+    end
+
   end
 
 

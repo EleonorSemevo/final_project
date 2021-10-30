@@ -69,6 +69,7 @@ en:
     all_nigth: "All nigth"
     comment: "Comment"
     login_title: "Login to leave a comment"
+    update: "Update"
   home:
     home_title: 'PHindpharma, your everyday companion'
     home_second_title: "An application which is a catalog of the list of centers

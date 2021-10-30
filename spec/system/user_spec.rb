@@ -1,7 +1,5 @@
 require 'rails_helper'
 RSpec.describe 'User management', type: :system do
-  # let!(:user1) { FactoryBot.create(:user1) }
-  # let!(:task) { FactoryBot.create(:task, user: user) }
   describe 'New  user creation function' do
     context 'When registering a new user' do
       it 'The created user is connected' do
@@ -119,10 +117,6 @@ RSpec.describe 'User management', type: :system do
         fill_in 'Email', with: 'lama@gmail.com'
         fill_in 'Password', with: '123456'
         click_on 'Connect'
-        #
-        # click_on 'Edit'
-        # fill_in 'Content', with: 'new content'
-        # click_on 'Update Comment'
         comment.update(content: 'new content')
         visit hospitals_path
         expect(page).to have_content 'new content'
@@ -134,53 +128,88 @@ RSpec.describe 'User management', type: :system do
           fill_in 'Email', with: 'lolo@gmail.com'
           fill_in 'Password', with: '123456'
           click_on 'Connect'
-          #
-          # click_on 'Edit'
-          # fill_in 'Content', with: 'new content'
-          # click_on 'Update Comment'
-          # comment.update(content: 'new content')
-          # click_on 'Delete'
+
           page.accept_confirm do
             click_link  'Delete'
           end
           expect(page).not_to have_content 'some content'
       end
-    #   it 'can consult profil' do
-    #
-    #   end
-    #
-    #   it 'can edit profile' do
-    #
-    #   end
-    #
-    #   it 'cannot edit other people profile' do
-    #
-    #   end
-    #
-    #   it 'cannot consult other people profile' do
-    #
-    #   end
-    #
-    #   it 'cannot access admin dashbord' do
-    #
-    #   end
-    #
-    # end
-    #
-    # context 'When user is logged in as an admin' do
-    #   it 'can access admin panel' do
-    #
-    #   end
-    # end
-  end
+      it 'can consult profil' do
+        user =  FactoryBot.create(:user5, name: 'lola', email: 'lola@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+          visit new_session_path
+          fill_in 'Email', with: 'lola@gmail.com'
+          fill_in 'Password', with: '123456'
+          click_on 'Connect'
+
+          click_on 'Account'
+          expect(page).to have_content 'lola'
+
+      end
+
+      it 'can edit profile' do
+        user =  FactoryBot.create(:user6, name: 'lili', email: 'lilima@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+          visit new_session_path
+          fill_in 'Email', with: 'lilima@gmail.com'
+          fill_in 'Password', with: '123456'
+          click_on 'Connect'
+
+          click_on 'Account'
+          click_on 'Update'
+          fill_in 'Name', with: 'lami'
+          fill_in 'Password' , with: '123456'
+          fill_in 'Password confirmation', with: '123456'
+          click_on 'Register'
+
+          expect(page).to have_content 'lami'
+      end
+
+      it 'cannot edit other people profile' do
+         FactoryBot.create(:user7, name: 'mamou', email: 'mamou@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+         user =  User.create(name: 'larryne', email: 'larryne@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+          visit new_session_path
+          fill_in 'Email', with: 'mamou@gmail.com'
+          fill_in 'Password', with: '123456'
+          click_on 'Connect'
+
+          visit edit_user_path(user)
+          expect(page).to have_content 'Unpermitted action!'
+      end
+
+      it 'cannot consult other people profile' do
+        FactoryBot.create(:user7, name: 'mamou', email: 'mamou@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+        user =  User.create(name: 'larryne', email: 'larryne@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+         visit new_session_path
+         fill_in 'Email', with: 'mamou@gmail.com'
+         fill_in 'Password', with: '123456'
+         click_on 'Connect'
+
+         visit user_path(user)
+         expect(page).to have_content 'Unpermitted action!'
+      end
+
+      it 'cannot access admin dashbord' do
+        FactoryBot.create(:user8, name: 'mamy', email: 'manny@gmail.com', password: '123456', password_confirmation: '123456', admin: false)
+         visit new_session_path
+         fill_in 'Email', with: 'manny@gmail.com'
+         fill_in 'Password', with: '123456'
+         click_on 'Connect'
+
+         visit admin_root_path
+         expect(page).to have_content 'You are not an admin'
+     end
 
 
-
-
-
-
-
-
-
+    end
+    #
+    context 'When user is logged in as an admin' do
+      it 'can access admin panel' do
+        FactoryBot.create(:admin, name: 'Admin', email: 'admin@gmail.com', password: '123456', password_confirmation: '123456', admin: true)
+          visit new_session_path
+          fill_in 'Email', with: 'admin@gmail.com'
+          fill_in 'Password', with: '123456'
+          click_on 'Connect'
+        expect(page).to have_content 'Users'
+      end
+    end
   end
 end

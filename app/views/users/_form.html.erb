@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>Register to leave a comment</h1>
   <%= form_with(model: user, local: true) do |form| %>
     <% if user.errors.any? %>
       <div id="error_explanation">

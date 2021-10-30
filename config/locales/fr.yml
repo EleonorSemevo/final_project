@@ -396,6 +396,7 @@ fr:
     all_nigth: "De garde"
     comment: "Commenter"
     login_title: "Se connecter pour laisser un commentaire"
+    update: "Mettre à jours"
 
   home:
     home_title: 'PHindpharma,  votre compagon de tous les jours'
