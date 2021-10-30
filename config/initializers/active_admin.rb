@@ -11,7 +11,7 @@ config.before_action :set_admin_locale
 
   def ensure_admin!
       if !current_user.present? || !current_user.admin
-        flash[:notice] = "You are not an admin"
+        flash[:notice] = I18n.t 'mes_text.not_admin'
           redirect_to hospitals_path
       end
   end

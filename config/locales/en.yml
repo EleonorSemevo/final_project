@@ -70,6 +70,11 @@ en:
     comment: "Comment"
     login_title: "Login to leave a comment"
     update: "Update"
+    unpermitted: "Unpermitted action!"
+    login_success: "Loggin successfully!"
+    login_error: "Loggin error!"
+    logout_success: "Logged out successfully"
+    not_admin: "You are not an admin"
   home:
     home_title: 'PHindpharma, your everyday companion'
     home_second_title: "An application which is a catalog of the list of centers
@@ -85,10 +90,7 @@ en:
     search_blood_bank: "Easily search for a blood bank of your choice"
     search_blood_bank_description: "Easily search for a blood bank according to the criteria of your choice among
     the following properties Neighborhood, city, name, specialty "
-    unpermitted: "Unpermitted action!"
-    login_success: "Loggin successfully!"
-    login_error: "Loggin error!"
-    logout_success: "Logged out successfully"
+
 
 
 

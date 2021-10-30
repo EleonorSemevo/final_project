@@ -401,6 +401,7 @@ fr:
     login_success: "Connecter avec succes"
     login_error: "Erreure!"
     logout_success: "Deconnexion réussie"
+    not_admin: "Vous n'êtes pas administrateur"
 
   home:
     home_title: 'PHindpharma,  votre compagon de tous les jours'
