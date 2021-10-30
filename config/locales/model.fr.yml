@@ -15,13 +15,14 @@ fr:
       speciality: specialité
       hospital_speciality: hopital_specialite
       timetable: emploi_du_temps
-      
+
     attributes:
       user:
         name: nom
         email: mail
         admin: administrateur
-        password: mots_de_passe
+        password: Password
+        password_confirmation: Password confirmation
 
       area:
         name: nom

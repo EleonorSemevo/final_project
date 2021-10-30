@@ -36,7 +36,7 @@ en:
     loggin_flash: "You are logged in"
     nav_hospital: "Are you looking for a hospital ?"
     nav_pharmacy: "Are you looking for a pharmacy ?"
-    nav_bllod_bank: "Are you looking for a bllod bank ?"
+    nav_bllod_bank: "Are you looking for a blood bank ?"
     nav_rigth_place: "You are at the rigth place"
     leave_comment: "You can leave a comment"
     like: "Like"
@@ -67,6 +67,8 @@ en:
     count: "Account"
     register: "Register"
     all_nigth: "All nigth"
+    comment: "Comment"
+    login_title: "Login to leave a comment"
   home:
     home_title: 'PHindpharma, your everyday companion'
     home_second_title: "An application which is a catalog of the list of centers

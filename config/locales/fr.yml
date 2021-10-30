@@ -394,6 +394,8 @@ fr:
     count: "Compte"
     register: "S'enregistré"
     all_nigth: "De garde"
+    comment: "Commenter"
+    login_title: "Se connecter pour laisser un commentaire"
 
   home:
     home_title: 'PHindpharma,  votre compagon de tous les jours'

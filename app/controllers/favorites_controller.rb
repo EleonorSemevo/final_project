@@ -1,5 +1,5 @@
 class FavoritesController < InheritedResources::Base
-
+  before_action :login_required, only: [:edit, :update, :destroy, :create]
 def create
   @favorite = Favorite.new(user_id: current_user.id, comment_id: params[:comment_id])
     if @favorite.save
@@ -12,7 +12,7 @@ end
 def destroy
     @favorite = Favorite.find_by(id: params[:id])
     @favorite.destroy
-    flash.now[:notice] = 'Favoris supprimé'
+    flash.now[:notice] = 'Unliked'
     redirect_back fallback_location: hospitals_path
 
 end
