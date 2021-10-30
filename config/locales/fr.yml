@@ -397,6 +397,10 @@ fr:
     comment: "Commenter"
     login_title: "Se connecter pour laisser un commentaire"
     update: "Mettre à jours"
+    unpermitted: "Actions nom permises"
+    login_success: "Connecter avec succes"
+    login_error: "Erreure!"
+    logout_success: "Deconnexion réussie"
 
   home:
     home_title: 'PHindpharma,  votre compagon de tous les jours'

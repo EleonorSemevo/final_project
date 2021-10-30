@@ -1,6 +1,6 @@
 class UsersController < InheritedResources::Base
     before_action :only_owner, only: [:edit, :update, :destroy,:show]
-    # before_action :only_owner, only: 
+    # before_action :only_owner, only:
   def create
     @user = User.new(user_params)
     if @user.save
@@ -17,7 +17,7 @@ class UsersController < InheritedResources::Base
   private
    def only_owner
      if current_user.id != User.find(params[:id]).id
-       flash[:notice] = "Unpermitted action!"
+       flash[:notice] = I18n.t 'mes_text.unpermitted'
        redirect_to hospitals_path
      end
    end

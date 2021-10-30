@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
    if user && user.authenticate('guest1234')
      session[:user_id] = user.id
        redirect_to hospitals_path
-       flash[:notice] = "Loggin successfully!"
+       flash[:notice] = I18n.t 'mes_text.login_success'
    else
-     flash[:notice] = "Loggin error!"
+     flash[:notice] = I18n.t 'mes_text.login_error'
    end
  end
 
@@ -20,10 +20,10 @@ class SessionsController < ApplicationController
    user = User.find_by(email: 'guestadmin@gmail.com')
    if user && user.authenticate('guestadmin123')
      session[:user_id] = user.id
-     flash[:notice] = "Loggin successfully!"
+     flash[:notice] = I18n.t 'mes_text.login_success'
      redirect_to admin_users_path
    else
-     flash[:notice] = "Loggin error!"
+      flash[:notice] = I18n.t 'mes_text.login_error'
    end
  end
 
@@ -34,20 +34,20 @@ class SessionsController < ApplicationController
      session[:user_id] = user.id
 
      if user.admin
-       flash[:notice] = "Logged in successfully!"
+       flash[:notice] = I18n.t 'mes_text.login_success'
        redirect_to admin_users_path
      else
        redirect_to hospitals_path
      end
    else
-     flash.now[:danger] = 'Failed to login'
+     flash.now[:danger] = I18n.t 'mes_text.login_error'
      render :new
    end
  end
 
  def destroy
    session.delete(:user_id)
-   flash[:notice] = "Logged out successfully"
+   flash[:notice] = I18n.t 'mes_text.logout_success'
    redirect_to hospitals_path
  end
 # ce show est utilisé pour logout le admin
