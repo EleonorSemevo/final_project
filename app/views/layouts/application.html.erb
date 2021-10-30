@@ -47,7 +47,11 @@
             </ul>
           </nav>
          </header>
-
+         <div class="flash">
+           <% flash.each do |key, value| %>
+           <%= content_tag(:div, value, class: "#{key} alert alert-warning", role: "alert") %>
+           <% end %>
+         </div>
         <span class = "principal">
           <%= yield %>
         </span>

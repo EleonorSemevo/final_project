@@ -10,13 +10,9 @@ ActiveAdmin.setup do |config|
 config.before_action :set_admin_locale
 
   def ensure_admin!
-      # raise ActionController::RoutingError.new('Not Found') if current_user.admin == nil
-      if current_user.present?
-        if current_user.admin == nil
-          redirect_to new_session_path
-        end
-      else
-        redirect_to new_session_path
+      if !current_user.present? || !current_user.admin
+        flash[:notice] = "You are not an admin"
+          redirect_to hospitals_path
       end
   end
 

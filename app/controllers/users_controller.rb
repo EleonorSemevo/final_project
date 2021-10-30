@@ -1,4 +1,5 @@
 class UsersController < InheritedResources::Base
+    before_action :login_required, only: [:edit, :update, :destroy,:show]
   def create
     @user = User.new(user_params)
     if @user.save
