@@ -29,7 +29,11 @@ class BloodBanksController < InheritedResources::Base
      end
     end
 
-    @blood_banks = @blood_banks.page(params[:page]).per(15)
+    if @blood_banks.class == Array
+      @blood_banks = Kaminari.paginate_array(@blood_banks).page(15).per(1)
+    else
+      @blood_banks = @blood_banks.page(params[:page]).per(15)
+    end
   end
 
   private
