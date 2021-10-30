@@ -31,7 +31,7 @@ FactoryBot.define do
     admin { false }
     password_confirmation {'password'}
   end
-  
+
   factory :user5, class: User do
     name { 'lalala' }
     email { 'lalala@gmail.com' }
@@ -79,7 +79,63 @@ FactoryBot.define do
 
   factory :admin, class: User do
     name { 'Lary' }
-    email { 'admin@gmail.com' }
+    email { 'admin1@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin1, class: User do
+    name { 'Lary' }
+    email { 'admin2@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin2, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin3, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin4, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin7, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin5, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
+    password { 'password' }
+    admin { true }
+    password_confirmation {'password'}
+  end
+
+  factory :admin6, class: User do
+    name { 'Lary' }
+    email { 'admin3@gmail.com' }
     password { 'password' }
     admin { true }
     password_confirmation {'password'}

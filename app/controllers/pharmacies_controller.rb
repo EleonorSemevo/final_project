@@ -28,7 +28,11 @@ def index
       @pharmacies = search_for_town(town)
    end
   end
+  if @pharmacies.class == Array
+    @pharmacies = Kaminari.paginate_array(@pharmacies).page(15).per(1)
+  else
     @pharmacies = @pharmacies.page(params[:page]).per(15)
+  end
 end
 
   private
