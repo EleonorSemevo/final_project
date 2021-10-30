@@ -61,7 +61,7 @@ RSpec.describe 'Hospital management function', type: :system do
 
     context 'When Hospital is created' do
         it 'can update hospital ' do
-        hos =  FactoryBot.create(:admin3, name: 'admin3', email: 'admin3@gmail.com',
+         FactoryBot.create(:admin3, name: 'admin3', email: 'admin3@gmail.com',
              password: '123456', password_confirmation: '123456', admin: true)
          area = Area.create(name: 'Kpota', town: 'Calavi')
 
@@ -73,7 +73,7 @@ RSpec.describe 'Hospital management function', type: :system do
            fill_in 'Email', with: 'admin3@gmail.com'
            fill_in 'Password', with: '123456'
            click_on 'Connect'
-           visit edit_admin_hospital_path(hos)
+           visit edit_admin_hospital_path(hospital)
            fill_in 'Name', with: 'Name1'
            click_on 'Update Hospital'
            expect(page).to have_content 'Name1'
