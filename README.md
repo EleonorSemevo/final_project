@@ -10,7 +10,6 @@
 
 ## Technologies outside the curriculum
 
-- VueJs
 - Active Admin
 
 ## Executon procedure
