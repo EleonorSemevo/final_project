@@ -28,12 +28,20 @@ nav ul{
 }
 
 .nav-item{
-color: black !important;
+//color: black !important;
+color: #ffffff !important;
+
 }
 
 header ul{
-  background-color: #c6c5da;
+  //background-color: #c6c5da;
+  background-color: #379cd2;
   margin-right: 0;
+  color: #ffffff;
+
+  font-size: 1.5rem;
+  line-height: 1.6;
+
 }
 
 header ul div li a:hover{

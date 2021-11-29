@@ -1,7 +1,12 @@
 .after_home_nav{
-  background-color: #6887b0;
-  height: 400px;
+  //background-color: #6887b0;
+  background-image: linear-gradient(
+    45deg, #379cd2, #4cb1e7);
+  height: 600px;
   padding: 3rem;
+
+  display: flex;
+  flex-direction: row;
 }
 .home_title{
   font-size: 4rem;
@@ -16,4 +21,150 @@
 
 .houme_sous_title{
   font-size: 20px;
+}
+
+.cadre{
+  margin-left: 133px;
+  margin-right: 133px;
+  
+}
+
+.landing-text{
+  display: table;
+}
+
+.cadre-text {
+  text-align: center;
+  vertical-align: middle;
+  
+  display: table-cell;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.hp-button  {
+  margin-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  color: #379cd2;
+  border-radius: 50px;
+}
+
+.parmacy-button{
+  
+
+}
+
+.hospital-button{
+  margin-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #379cd2;
+  color: #ffffff !important;
+  border-radius: 50px;
+
+}
+
+.cadre-text h1, h5{
+  color: #ffffff !important;
+}
+
+.third-cadre h1{
+  text-align: center;
+  font-size: 5rem;
+  color: #111111;
+}
+
+.third-cadre p{
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.third-cadre a{
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.third-cadre{
+  margin: 8%;
+ // margin-right: 30%;
+  background-color: #ffffff;
+}
+
+.middle-service{
+  /*
+  margin-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  */
+  background-color: #379cd2;
+  
+
+  text-align: center;
+  font-size: 5rem;
+  line-height: 3rem;
+  display: table;
+}
+
+
+.middle-service h1{
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+.middle-service p{
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 100px;
+  margin-bottom: 130px;
+}
+
+.middle-service .service-cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.third-button{
+  background-color: #ffffff !important;
+  padding: 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: #379cd2;
+}
+
+.third-button :hover{
+  color: #379cd2 !important;
+}
+
+.forth-class{
+  padding: 1%;
+  margin-right: 2rem;
+  box-shadow: 8px 8px 16px 8px  #379cd2;
+  //padding: 2%;
+  width: 30%;
+ 
+
+}
+
+.forth-class p{
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 3rem;
+
+}
+
+.last-class{
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 2%;
 }

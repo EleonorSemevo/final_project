@@ -1,15 +1,81 @@
 
+
+
+
 <div class="after_home_nav">
-  <p class="home_title "><%= I18n.t 'home.home_title' %> </p>
-  <p style="color: white; font-size: 18px;"><%= I18n.t 'home.home_second_title' %></p>
-      <%= link_to (I18n.t 'home.visit'), hospitals_path, class: 'btn btn-danger', style: "color: white; text-decoration: none;" %>
+  <div class="cadre landing-text">
+    <div class="cadre-text">
+      <h1 class="first-text">Findpharma, votre compagNon de tous les jours
+      </h1>
+      <h5 class="first-text">Pour le bien être de tous </h5>
+      <%= link_to 'Nos hôpitaux', hospitals_path, class: 'hp-button', style: " text-decoration: none;" %>
+    </div>
+  </div>
+
+  <div class="cadre">
+    <img src="//images01.nicepage.com/c9/f8/c9f8a71c816fecfd590568d064cb782a.png" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+  </div>
+
+</div>
 
 
+<div class="third-cadre">
+  <h1>Chercher facilement une pharmacie</h1> 
+  <div class="u-border-7 u-border-palette-2-base u-line u-line-horizontal u-line-1"></div>
+  <p>
+   Nous vous présentons un catalogue des hôpitaux, les heures de consultation, des assurances prises en charges dans chaque hôpital ainsi que le lien google map
+   de l'hopital.
+  </p>
+  <%= link_to 'Nos hôpitaux', hospitals_path, class: 'hospital-button', style: " text-decoration: none;" %>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhhcm1hY3l8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+  </div>
+  <div class="col-md-4 middle-service">
+    <div class="service-cell">
+    <h1>Chercher facilement une pharmacie</h1> 
+    
+      <p>
+        In the form, you have the possibility to add as many as specialities you want to the hospital
+        you are creating by clicking on "add new hospital speciality" which is at the bottom of the form.
+        On each nested form to add specialty, you have also the possibility to add the
+        timetables to the speciality as many as
+        you wante by clicking on "add new timetable" which is on the specialty nested form
+      </p>
+      <%= link_to 'Nos Pharmacies', pharmacies_path, class: 'third-button', style: "text-decoration: none;" %>
+      
+    </div>
+  </div>
+  <div class="col-md-4">
+    <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+  </div>
+</div>
 
 
+<div class="row last-class">
+<h1> Quelques commentaires </h1>
+  <div class="col-md-2 forth-class">
+    <p> Très belle initiative. Je suis mpatient de voir vos nouvelles fonctionnalités prochaine.</p>
+    <img width="100%" height="20%"  src="https://images.generated.photos/CyFBv1oKdLaCGspIyD5AdV6z3CRsYUqI8bhT_et8QKc/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/MjM5ODA0LmpwZw.jpg" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+    <p style="color: #379cd2;"> Semevo Eleonor </p>
+  </div>
 
+  <div class="col-md-2 forth-class">
+    <p> Belle idée, j'adore</p>
+    <img width="100%" height="20%"  src="https://images.generated.photos/CyFBv1oKdLaCGspIyD5AdV6z3CRsYUqI8bhT_et8QKc/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/MjM5ODA0LmpwZw.jpg" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+    <p style="color: #379cd2;"> Semevo Eleonor </p>
+  </div>
 
-
+  <div class="col-md-2 forth-class">
+    <p> Grâce à votre application, j'ai sauvé la vie de mon ami.</p>
+    <img width="100%" height="20%"  src="https://images.generated.photos/CyFBv1oKdLaCGspIyD5AdV6z3CRsYUqI8bhT_et8QKc/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92Ml8w/MjM5ODA0LmpwZw.jpg" alt="" class="u-image u-image-default u-image-1" width="600" height="500">
+    <p style="color: #379cd2;"> Semevo Eleonor </p>
+  </div>
+  
+  
 </div>
 
 <div class="row" style="background-color: #fafafa;">
