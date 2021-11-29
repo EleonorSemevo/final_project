@@ -1,30 +1,35 @@
 <ul>
   <% comments.each do |comment| %>
-    <% if comment.id.present? %>
-      <li class="liste-commentaire">
-        <div class="comment-content" id="this_comment_<%= comment.id%>"> </div>
-        <p><%= comment.content %></p>
+  <div class="comment">
+      <% if comment.id.present? %>
+        <li class="liste-commentaire">
+          <div class="comment-content" id="this_comment_<%= comment.id%>"> </div>
+          <p class="comment-name"><%= comment.user.name %></p>
+          <hr />
+          <p><%= comment.content %></p>
 
 
-        <% if logged_in? && current_user.id == comment.user_id %>
-          <p>
-            <%= link_to (I18n.t 'mes_text.editer'), edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
+          <% if logged_in? && current_user.id == comment.user_id %>
+            <p>
+              <%= link_to (I18n.t 'mes_text.editer'), edit_comment_path(comment), remote: true , class: "btn btn-primary bouton-editer"%>
 
-            <%= link_to (I18n.t 'mes_text.delete'), comment_path(comment), method: :delete, remote: true,
-              data: {confirm: "Do you really want to delete it?"}, class: "btn btn-danger bouton-supprimer" %>
-          </p
-        <% end %>
+              <%= link_to (I18n.t 'mes_text.delete'), comment_path(comment), method: :delete, remote: true,
+                data: {confirm: "Do you really want to delete it?"}, class: "btn btn-danger bouton-supprimer" %>
+            </p
+          <% end %>
 
-        <% if logged_in? && current_user.id != comment.user_id && !favorite?(comment.id) %>
+          <% if logged_in? && current_user.id != comment.user_id && !favorite?(comment.id) %>
+            <%= link_to (I18n.t 'mes_text.like'),  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
+          <% elsif logged_in? && current_user.id != comment.user_id && favorite?(comment.id) %>
+              <%= link_to (I18n.t 'mes_text.unlike'),  get_favorite(comment.id), method: :delete, class: 'btn btn-danger', style: "color: white;" %>
+          <% end %>
+
+          <% unless logged_in?%>
           <%= link_to (I18n.t 'mes_text.like'),  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
-        <% elsif logged_in? && current_user.id != comment.user_id && favorite?(comment.id) %>
-            <%= link_to (I18n.t 'mes_text.unlike'),  get_favorite(comment.id), method: :delete, class: 'btn btn-danger', style: "color: white;" %>
-        <% end %>
-
-        <% unless logged_in?%>
-         <%= link_to (I18n.t 'mes_text.like'),  favorites_path(comment_id: comment.id), method: :post, class: 'btn btn-success', style: "color: white;" %>
-        <% end %>
-      </li>
-    <% end %>
+          <% end %>
+        </li>
+      <% end %>
+  </div>
   <% end %>
+ 
 </ul>
