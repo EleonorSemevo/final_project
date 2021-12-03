@@ -68,7 +68,7 @@
               <% timetables = get_hospital_speciality(@hospital.id, speciality.id).timetables %>
               <%  timetables.each do |timetable| %>
                 <strong>
-                  <%=  get_day(timetable.day)%>: <%= timetable.start_hour %> à <%= timetable.end_hour %>
+                  <%=  get_day(timetable.day.to_i) %> : <%= timetable.start_hour %> à <%= timetable.end_hour %>
                 </strong>
               <% end %>
             </td>

@@ -32,5 +32,7 @@ module ApplicationHelper
     elsif day==7
       day = "Dimanche"
     end
+
+    return day
   end
 end
