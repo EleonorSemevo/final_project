@@ -78,15 +78,8 @@ class BloodBanksController < InheritedResources::Base
   end
 
   def search_for_town(town)
-    result = BloodBank.all
-    interm = []
-    # rechercher selon town
-    result.each do |pharmacy|
-       if pharmacy.area.town == town
-         interm.push(pharmacy)
-       end
-    end
-    @blood_banks = interm
+    areas = Area.where(town: town)
+    @blood_banks= BloodBank.where(:area_id => areas)
   end
     def blood_bank_params
       params.require(:blood_bank).permit(:name, :area_id, :googlemap_link, :number1, :number2, :town_id)

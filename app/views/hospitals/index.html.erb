@@ -36,14 +36,14 @@
             <td><%= hospital.area.name %></td>
             <td>
               <% if  hospital.public %>
-                <span class="badge badge-success" style="background-color: green">YES</span>
+                <span class="badge badge-success" style="background-color: green">Oui</span>
               <% else %>
-                <span class="badge badge-danger" style="background-color: red">NO</span>
+                <span class="badge badge-danger" style="background-color: red">Non</span>
               <% end%>
             </td>
             <td> <a href="<%= hospital.googlemap_link %>" target="_blank"> <%= I18n.t 'mes_text.link' %></a></td>
-            <td><%= hospital.number1 %></td>
-            <td><%= hospital.number2 %></td>
+            <td><%= hospital.number1 %> </td>
+            <td><%= hospital.number2 %> </td>
             <td><%= link_to (I18n.t 'mes_text.detail') , hospital, class: "btn btn-primary bouton-detail" %></td>
           </tr>
         <% end %>

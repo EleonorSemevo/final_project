@@ -205,27 +205,16 @@ class HospitalsController < ApplicationController
     end
 
     def search_speciality(speciality_id)
-      result = Hospital.all
-      interm = []
-      speciality = Speciality.find(speciality_id)
-      # rechercher selon town et speciality
-      result.each do |hospital|
-        if speciality.in? hospital.specialities
-           interm.push(hospital)
-         end
-       end
-      @hospitals = interm
+      speciality = Speciality.find(speciality_id.to_i)
+      print 'ttttttttttttttttttt'
+      @hospitals= Hospital.joins(:specialities).where("specialities.id = ?", speciality_id.to_i)
+      #@hospitals= Hospital.include(:specialities).where("speciality.id = ?", speciality_id.to_i)
+      print @hospitals
     end
 
     def search_town(town)
-      result = Hospital.all
-      interm = []
-      result.each do |hospital|
-        if hospital.area.town == town
-           interm.push(hospital)
-         end
-       end
-      @hospitals = interm
+      areas = Area.where(town: town)
+     @hospitals= Hospital.where(:area_id => areas)
     end
 
     # Only allow a list of trusted parameters through.

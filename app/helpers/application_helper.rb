@@ -15,4 +15,22 @@ module ApplicationHelper
     # current_user.destroy
     redirect_to hospitals_path
   end
+
+  def get_day(day)
+    if day==1
+      day = "Lundi"
+    elsif day==2
+      day = "Mardi"
+    elsif day==3
+      day = "Mercredi"
+    elsif day==4
+      day = "Jeudi"
+    elsif day==5
+      day = "Vendredi"
+    elsif day==6
+      day = "Samedi"
+    elsif day==7
+      day = "Dimanche"
+    end
+  end
 end

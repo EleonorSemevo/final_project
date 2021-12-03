@@ -77,15 +77,10 @@ end
     end
 
     def search_for_town(town)
-      result = Pharmacy.all
-      interm = []
-      # rechercher selon town
-      result.each do |pharmacy|
-         if pharmacy.area.town == town
-           interm.push(pharmacy)
-         end
-      end
-      @pharmacies = interm
+      
+        areas = Area.where(town: town)
+       @pharmacies= Pharmacy.where(:area_id => areas)
+      
     end
     def pharmacy_params
       params.require(:pharmacy).permit(:name, :area_id, :all_nigth, :googlemap_link, :number1, :number2, :town_id)
